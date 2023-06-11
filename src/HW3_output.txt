@@ -1,0 +1,1627 @@
+Negative capacity!
+The stack is empty
+The stack is empty
+
+stack1 size: 0
+Is empty? true
+Starts iterating stack1...
+Done iterating stack1.
+
+stack1 size: 1
+Is empty? false
+Starts iterating stack1...
+MyCloneable: 1
+Done iterating stack1.
+
+Peek: MyCloneable: 1
+Pop: MyCloneable: 1
+
+stack1 size: 0
+Is empty? true
+Starts iterating stack1...
+Done iterating stack1.
+
+stack2 size: 2
+Is empty? false
+Starts iterating stack2...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack2.
+
+Is stack1 == stack3? false
+Is stack2 == stack3? false
+Is stack1 == stack4? false
+Is stack2 == stack4? false
+
+stack3 size: 2
+Is empty? false
+Starts iterating stack3...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack3.
+
+stack1 size: 2
+Is empty? false
+Starts iterating stack1...
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack1.
+
+stack2 size: 2
+Is empty? false
+Starts iterating stack2...
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack2.
+
+stack3 size: 2
+Is empty? false
+Starts iterating stack3...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack3.
+
+stack4 size: 2
+Is empty? false
+Starts iterating stack4...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack4.
+
+stack1 size: 3
+Is empty? false
+Starts iterating stack1...
+MyCloneable: 3
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack1.
+
+stack2 size: 3
+Is empty? false
+Starts iterating stack2...
+MyCloneable: 3
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack2.
+
+stack3 size: 2
+Is empty? false
+Starts iterating stack3...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack3.
+
+stack4 size: 2
+Is empty? false
+Starts iterating stack4...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack4.
+
+stack1 size: 4
+Is empty? false
+Starts iterating stack1...
+MyCloneable: 4
+MyCloneable: 3
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack1.
+
+stack1 size: 5
+Is empty? false
+Starts iterating stack1...
+MyCloneable: 5
+MyCloneable: 4
+MyCloneable: 3
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack1.
+
+stack2 size: 5
+Is empty? false
+Starts iterating stack2...
+MyCloneable: 5
+MyCloneable: 4
+MyCloneable: 3
+MyCloneable: 2
+MyCloneable: 15
+Done iterating stack2.
+
+stack3 size: 2
+Is empty? false
+Starts iterating stack3...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack3.
+
+stack4 size: 2
+Is empty? false
+Starts iterating stack4...
+MyCloneable: 2
+MyCloneable: 1
+Done iterating stack4.
+
+The stack reached its full capacity.
+The stack reached its full capacity.
+
+Testing of part A is over!
+
+
+playlist1: [(Unicorn, Noa Kirel, POP, 2:51), (Easter Egg, Dvir ft. Gal, HIP_HOP, 3:50), (Take Five, Dave Brubeck, JAZZ, 2:55), (Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+playlist1: [(Unicorn, Noa Kirel, POP, 2:51), (Easter Egg, Dvir ft. Gal, HIP_HOP, 3:50), (Take Five, Dave Brubeck, JAZZ, 2:55), (Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+playlist2: [(Unicorn, Noa Kirel, POP, 2:51), (Easter Egg, Dvir ft. Gal, HIP_HOP, 3:50), (Take Five, Dave Brubeck, JAZZ, 2:55), (Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+Is playlist1 == playlist2? false
+Is playlist1 equal to playlist2? true
+Is playlist2 equal to playlist1? true
+Is playlist1 equal to null? false
+playlist1: [(Unicorn, Noa Kirel, POP, 2:51), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17), (Take Five, Dave Brubeck, JAZZ, 2:55), (Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+playlist2: [(Unicorn, Noa Kirel, POP, 2:51), (Easter Egg, Dvir ft. Gal, HIP_HOP, 3:50), (Take Five, Dave Brubeck, JAZZ, 2:55), (Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+
+Is playlist1 equal to playlist2? true
+Is playlist2 equal to playlist1? true
+Cannot add the song!
+Cannot add the song!
+Cannot add the song!
+song1: Unicorn, Noa Kirel, POP, 2:51
+clonedSong1: Unicorn, Noa Kirel, POP, 2:51
+Is song1 equal to clonedSong1? true
+Is clonedSong1 equal to song1? true
+Is song1 == clonedSong1? false
+Is song1.equals(null)? false
+
+Is playlist1 equal to playlist3? false
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38)]
+Is playlist1 equal to playlist3? false
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17)]
+Is playlist1 equal to playlist3? false
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17), (Unicorn, Noa Kirel, POP, 2:51)]
+Is playlist1 equal to playlist3? false
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17), (Unicorn, Noa Kirel, POP, 2:51), (Take Five, Dave Brubeck, JAZZ, 2:55)]
+Is playlist1 equal to playlist3? true
+Remove result: true
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17), (Unicorn, Noa Kirel, POP, 2:51)]
+Is playlist1 equal to playlist3? false
+playlist3: [(Born In The U.S.A., Bruce Springsteen, ROCK, 4:38), (Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17), (Unicorn, Noa Kirel, POP, 2:51), (Take Five, Dave Brubeck, JAZZ, 2:55)]
+Is playlist1 equal to playlist3? true
+
+Number of playlists in set: 1
+Starts scanning...
+Unicorn, Noa Kirel, POP, 2:51
+-----------------------------------
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+-----------------------------------
+Take Five, Dave Brubeck, JAZZ, 2:55
+-----------------------------------
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+-----------------------------------
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+-----------------------------------
+Shape of You, Ed Sheeran, POP, 3:54
+-----------------------------------
+Y.M.C.A., Village People, DISCO, 3:19
+-----------------------------------
+Dancing Queen, ABBA, DISCO, 3:51
+-----------------------------------
+Le Freak, Chic, DISCO, 5:07
+-----------------------------------
+Counting Stars, OneRepublic, POP, 4:17
+-----------------------------------
+Shape of My Heart, Backstreet Boys, POP, 3:50
+-----------------------------------
+Another Easter Egg, Ahmed Jabara, ROCK, 3:47
+-----------------------------------
+Mamma Mia, ABBA, POP, 3:33
+-----------------------------------
+Waterloo, ABBA, POP, 2:42
+-----------------------------------
+Take a Chance on Me, ABBA, POP, 4:20
+-----------------------------------
+After initial scanning
+
+Starting scan number 1 [POP, -10, ABBA, ADDING]
+After scan number 1.
+
+Starting scan number 2 [POP, -10, ABBA, NAME]
+After scan number 2.
+
+Starting scan number 3 [POP, -10, ABBA, DURATION]
+After scan number 3.
+
+Starting scan number 4 [POP, -10, null, ADDING]
+After scan number 4.
+
+Starting scan number 5 [POP, -10, null, NAME]
+After scan number 5.
+
+Starting scan number 6 [POP, -10, null, DURATION]
+After scan number 6.
+
+Starting scan number 7 [POP, -10, Backstreet Boys, ADDING]
+After scan number 7.
+
+Starting scan number 8 [POP, -10, Backstreet Boys, NAME]
+After scan number 8.
+
+Starting scan number 9 [POP, -10, Backstreet Boys, DURATION]
+After scan number 9.
+
+Starting scan number 10 [POP, 0, ABBA, ADDING]
+After scan number 10.
+
+Starting scan number 11 [POP, 0, ABBA, NAME]
+After scan number 11.
+
+Starting scan number 12 [POP, 0, ABBA, DURATION]
+After scan number 12.
+
+Starting scan number 13 [POP, 0, null, ADDING]
+After scan number 13.
+
+Starting scan number 14 [POP, 0, null, NAME]
+After scan number 14.
+
+Starting scan number 15 [POP, 0, null, DURATION]
+After scan number 15.
+
+Starting scan number 16 [POP, 0, Backstreet Boys, ADDING]
+After scan number 16.
+
+Starting scan number 17 [POP, 0, Backstreet Boys, NAME]
+After scan number 17.
+
+Starting scan number 18 [POP, 0, Backstreet Boys, DURATION]
+After scan number 18.
+
+Starting scan number 19 [POP, 200, ABBA, ADDING]
+Waterloo, ABBA, POP, 2:42
+After scan number 19.
+
+Starting scan number 20 [POP, 200, ABBA, NAME]
+Waterloo, ABBA, POP, 2:42
+After scan number 20.
+
+Starting scan number 21 [POP, 200, ABBA, DURATION]
+Waterloo, ABBA, POP, 2:42
+After scan number 21.
+
+Starting scan number 22 [POP, 200, null, ADDING]
+Unicorn, Noa Kirel, POP, 2:51
+Waterloo, ABBA, POP, 2:42
+After scan number 22.
+
+Starting scan number 23 [POP, 200, null, NAME]
+Unicorn, Noa Kirel, POP, 2:51
+Waterloo, ABBA, POP, 2:42
+After scan number 23.
+
+Starting scan number 24 [POP, 200, null, DURATION]
+Waterloo, ABBA, POP, 2:42
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 24.
+
+Starting scan number 25 [POP, 200, Backstreet Boys, ADDING]
+After scan number 25.
+
+Starting scan number 26 [POP, 200, Backstreet Boys, NAME]
+After scan number 26.
+
+Starting scan number 27 [POP, 200, Backstreet Boys, DURATION]
+After scan number 27.
+
+Starting scan number 28 [POP, 900, ABBA, ADDING]
+Mamma Mia, ABBA, POP, 3:33
+Waterloo, ABBA, POP, 2:42
+Take a Chance on Me, ABBA, POP, 4:20
+After scan number 28.
+
+Starting scan number 29 [POP, 900, ABBA, NAME]
+Mamma Mia, ABBA, POP, 3:33
+Take a Chance on Me, ABBA, POP, 4:20
+Waterloo, ABBA, POP, 2:42
+After scan number 29.
+
+Starting scan number 30 [POP, 900, ABBA, DURATION]
+Waterloo, ABBA, POP, 2:42
+Mamma Mia, ABBA, POP, 3:33
+Take a Chance on Me, ABBA, POP, 4:20
+After scan number 30.
+
+Starting scan number 31 [POP, 900, null, ADDING]
+Unicorn, Noa Kirel, POP, 2:51
+Shape of You, Ed Sheeran, POP, 3:54
+Counting Stars, OneRepublic, POP, 4:17
+Shape of My Heart, Backstreet Boys, POP, 3:50
+Mamma Mia, ABBA, POP, 3:33
+Waterloo, ABBA, POP, 2:42
+Take a Chance on Me, ABBA, POP, 4:20
+After scan number 31.
+
+Starting scan number 32 [POP, 900, null, NAME]
+Counting Stars, OneRepublic, POP, 4:17
+Mamma Mia, ABBA, POP, 3:33
+Shape of My Heart, Backstreet Boys, POP, 3:50
+Shape of You, Ed Sheeran, POP, 3:54
+Take a Chance on Me, ABBA, POP, 4:20
+Unicorn, Noa Kirel, POP, 2:51
+Waterloo, ABBA, POP, 2:42
+After scan number 32.
+
+Starting scan number 33 [POP, 900, null, DURATION]
+Waterloo, ABBA, POP, 2:42
+Unicorn, Noa Kirel, POP, 2:51
+Mamma Mia, ABBA, POP, 3:33
+Shape of My Heart, Backstreet Boys, POP, 3:50
+Shape of You, Ed Sheeran, POP, 3:54
+Counting Stars, OneRepublic, POP, 4:17
+Take a Chance on Me, ABBA, POP, 4:20
+After scan number 33.
+
+Starting scan number 34 [POP, 900, Backstreet Boys, ADDING]
+Shape of My Heart, Backstreet Boys, POP, 3:50
+After scan number 34.
+
+Starting scan number 35 [POP, 900, Backstreet Boys, NAME]
+Shape of My Heart, Backstreet Boys, POP, 3:50
+After scan number 35.
+
+Starting scan number 36 [POP, 900, Backstreet Boys, DURATION]
+Shape of My Heart, Backstreet Boys, POP, 3:50
+After scan number 36.
+
+Starting scan number 37 [ROCK, -10, ABBA, ADDING]
+After scan number 37.
+
+Starting scan number 38 [ROCK, -10, ABBA, NAME]
+After scan number 38.
+
+Starting scan number 39 [ROCK, -10, ABBA, DURATION]
+After scan number 39.
+
+Starting scan number 40 [ROCK, -10, null, ADDING]
+After scan number 40.
+
+Starting scan number 41 [ROCK, -10, null, NAME]
+After scan number 41.
+
+Starting scan number 42 [ROCK, -10, null, DURATION]
+After scan number 42.
+
+Starting scan number 43 [ROCK, -10, Backstreet Boys, ADDING]
+After scan number 43.
+
+Starting scan number 44 [ROCK, -10, Backstreet Boys, NAME]
+After scan number 44.
+
+Starting scan number 45 [ROCK, -10, Backstreet Boys, DURATION]
+After scan number 45.
+
+Starting scan number 46 [ROCK, 0, ABBA, ADDING]
+After scan number 46.
+
+Starting scan number 47 [ROCK, 0, ABBA, NAME]
+After scan number 47.
+
+Starting scan number 48 [ROCK, 0, ABBA, DURATION]
+After scan number 48.
+
+Starting scan number 49 [ROCK, 0, null, ADDING]
+After scan number 49.
+
+Starting scan number 50 [ROCK, 0, null, NAME]
+After scan number 50.
+
+Starting scan number 51 [ROCK, 0, null, DURATION]
+After scan number 51.
+
+Starting scan number 52 [ROCK, 0, Backstreet Boys, ADDING]
+After scan number 52.
+
+Starting scan number 53 [ROCK, 0, Backstreet Boys, NAME]
+After scan number 53.
+
+Starting scan number 54 [ROCK, 0, Backstreet Boys, DURATION]
+After scan number 54.
+
+Starting scan number 55 [ROCK, 200, ABBA, ADDING]
+After scan number 55.
+
+Starting scan number 56 [ROCK, 200, ABBA, NAME]
+After scan number 56.
+
+Starting scan number 57 [ROCK, 200, ABBA, DURATION]
+After scan number 57.
+
+Starting scan number 58 [ROCK, 200, null, ADDING]
+After scan number 58.
+
+Starting scan number 59 [ROCK, 200, null, NAME]
+After scan number 59.
+
+Starting scan number 60 [ROCK, 200, null, DURATION]
+After scan number 60.
+
+Starting scan number 61 [ROCK, 200, Backstreet Boys, ADDING]
+After scan number 61.
+
+Starting scan number 62 [ROCK, 200, Backstreet Boys, NAME]
+After scan number 62.
+
+Starting scan number 63 [ROCK, 200, Backstreet Boys, DURATION]
+After scan number 63.
+
+Starting scan number 64 [ROCK, 900, ABBA, ADDING]
+After scan number 64.
+
+Starting scan number 65 [ROCK, 900, ABBA, NAME]
+After scan number 65.
+
+Starting scan number 66 [ROCK, 900, ABBA, DURATION]
+After scan number 66.
+
+Starting scan number 67 [ROCK, 900, null, ADDING]
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+Another Easter Egg, Ahmed Jabara, ROCK, 3:47
+After scan number 67.
+
+Starting scan number 68 [ROCK, 900, null, NAME]
+Another Easter Egg, Ahmed Jabara, ROCK, 3:47
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+After scan number 68.
+
+Starting scan number 69 [ROCK, 900, null, DURATION]
+Another Easter Egg, Ahmed Jabara, ROCK, 3:47
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+After scan number 69.
+
+Starting scan number 70 [ROCK, 900, Backstreet Boys, ADDING]
+After scan number 70.
+
+Starting scan number 71 [ROCK, 900, Backstreet Boys, NAME]
+After scan number 71.
+
+Starting scan number 72 [ROCK, 900, Backstreet Boys, DURATION]
+After scan number 72.
+
+Starting scan number 73 [HIP_HOP, -10, ABBA, ADDING]
+After scan number 73.
+
+Starting scan number 74 [HIP_HOP, -10, ABBA, NAME]
+After scan number 74.
+
+Starting scan number 75 [HIP_HOP, -10, ABBA, DURATION]
+After scan number 75.
+
+Starting scan number 76 [HIP_HOP, -10, null, ADDING]
+After scan number 76.
+
+Starting scan number 77 [HIP_HOP, -10, null, NAME]
+After scan number 77.
+
+Starting scan number 78 [HIP_HOP, -10, null, DURATION]
+After scan number 78.
+
+Starting scan number 79 [HIP_HOP, -10, Backstreet Boys, ADDING]
+After scan number 79.
+
+Starting scan number 80 [HIP_HOP, -10, Backstreet Boys, NAME]
+After scan number 80.
+
+Starting scan number 81 [HIP_HOP, -10, Backstreet Boys, DURATION]
+After scan number 81.
+
+Starting scan number 82 [HIP_HOP, 0, ABBA, ADDING]
+After scan number 82.
+
+Starting scan number 83 [HIP_HOP, 0, ABBA, NAME]
+After scan number 83.
+
+Starting scan number 84 [HIP_HOP, 0, ABBA, DURATION]
+After scan number 84.
+
+Starting scan number 85 [HIP_HOP, 0, null, ADDING]
+After scan number 85.
+
+Starting scan number 86 [HIP_HOP, 0, null, NAME]
+After scan number 86.
+
+Starting scan number 87 [HIP_HOP, 0, null, DURATION]
+After scan number 87.
+
+Starting scan number 88 [HIP_HOP, 0, Backstreet Boys, ADDING]
+After scan number 88.
+
+Starting scan number 89 [HIP_HOP, 0, Backstreet Boys, NAME]
+After scan number 89.
+
+Starting scan number 90 [HIP_HOP, 0, Backstreet Boys, DURATION]
+After scan number 90.
+
+Starting scan number 91 [HIP_HOP, 200, ABBA, ADDING]
+After scan number 91.
+
+Starting scan number 92 [HIP_HOP, 200, ABBA, NAME]
+After scan number 92.
+
+Starting scan number 93 [HIP_HOP, 200, ABBA, DURATION]
+After scan number 93.
+
+Starting scan number 94 [HIP_HOP, 200, null, ADDING]
+After scan number 94.
+
+Starting scan number 95 [HIP_HOP, 200, null, NAME]
+After scan number 95.
+
+Starting scan number 96 [HIP_HOP, 200, null, DURATION]
+After scan number 96.
+
+Starting scan number 97 [HIP_HOP, 200, Backstreet Boys, ADDING]
+After scan number 97.
+
+Starting scan number 98 [HIP_HOP, 200, Backstreet Boys, NAME]
+After scan number 98.
+
+Starting scan number 99 [HIP_HOP, 200, Backstreet Boys, DURATION]
+After scan number 99.
+
+Starting scan number 100 [HIP_HOP, 900, ABBA, ADDING]
+After scan number 100.
+
+Starting scan number 101 [HIP_HOP, 900, ABBA, NAME]
+After scan number 101.
+
+Starting scan number 102 [HIP_HOP, 900, ABBA, DURATION]
+After scan number 102.
+
+Starting scan number 103 [HIP_HOP, 900, null, ADDING]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 103.
+
+Starting scan number 104 [HIP_HOP, 900, null, NAME]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 104.
+
+Starting scan number 105 [HIP_HOP, 900, null, DURATION]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 105.
+
+Starting scan number 106 [HIP_HOP, 900, Backstreet Boys, ADDING]
+After scan number 106.
+
+Starting scan number 107 [HIP_HOP, 900, Backstreet Boys, NAME]
+After scan number 107.
+
+Starting scan number 108 [HIP_HOP, 900, Backstreet Boys, DURATION]
+After scan number 108.
+
+Starting scan number 109 [COUNTRY, -10, ABBA, ADDING]
+After scan number 109.
+
+Starting scan number 110 [COUNTRY, -10, ABBA, NAME]
+After scan number 110.
+
+Starting scan number 111 [COUNTRY, -10, ABBA, DURATION]
+After scan number 111.
+
+Starting scan number 112 [COUNTRY, -10, null, ADDING]
+After scan number 112.
+
+Starting scan number 113 [COUNTRY, -10, null, NAME]
+After scan number 113.
+
+Starting scan number 114 [COUNTRY, -10, null, DURATION]
+After scan number 114.
+
+Starting scan number 115 [COUNTRY, -10, Backstreet Boys, ADDING]
+After scan number 115.
+
+Starting scan number 116 [COUNTRY, -10, Backstreet Boys, NAME]
+After scan number 116.
+
+Starting scan number 117 [COUNTRY, -10, Backstreet Boys, DURATION]
+After scan number 117.
+
+Starting scan number 118 [COUNTRY, 0, ABBA, ADDING]
+After scan number 118.
+
+Starting scan number 119 [COUNTRY, 0, ABBA, NAME]
+After scan number 119.
+
+Starting scan number 120 [COUNTRY, 0, ABBA, DURATION]
+After scan number 120.
+
+Starting scan number 121 [COUNTRY, 0, null, ADDING]
+After scan number 121.
+
+Starting scan number 122 [COUNTRY, 0, null, NAME]
+After scan number 122.
+
+Starting scan number 123 [COUNTRY, 0, null, DURATION]
+After scan number 123.
+
+Starting scan number 124 [COUNTRY, 0, Backstreet Boys, ADDING]
+After scan number 124.
+
+Starting scan number 125 [COUNTRY, 0, Backstreet Boys, NAME]
+After scan number 125.
+
+Starting scan number 126 [COUNTRY, 0, Backstreet Boys, DURATION]
+After scan number 126.
+
+Starting scan number 127 [COUNTRY, 200, ABBA, ADDING]
+After scan number 127.
+
+Starting scan number 128 [COUNTRY, 200, ABBA, NAME]
+After scan number 128.
+
+Starting scan number 129 [COUNTRY, 200, ABBA, DURATION]
+After scan number 129.
+
+Starting scan number 130 [COUNTRY, 200, null, ADDING]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 130.
+
+Starting scan number 131 [COUNTRY, 200, null, NAME]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 131.
+
+Starting scan number 132 [COUNTRY, 200, null, DURATION]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 132.
+
+Starting scan number 133 [COUNTRY, 200, Backstreet Boys, ADDING]
+After scan number 133.
+
+Starting scan number 134 [COUNTRY, 200, Backstreet Boys, NAME]
+After scan number 134.
+
+Starting scan number 135 [COUNTRY, 200, Backstreet Boys, DURATION]
+After scan number 135.
+
+Starting scan number 136 [COUNTRY, 900, ABBA, ADDING]
+After scan number 136.
+
+Starting scan number 137 [COUNTRY, 900, ABBA, NAME]
+After scan number 137.
+
+Starting scan number 138 [COUNTRY, 900, ABBA, DURATION]
+After scan number 138.
+
+Starting scan number 139 [COUNTRY, 900, null, ADDING]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 139.
+
+Starting scan number 140 [COUNTRY, 900, null, NAME]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 140.
+
+Starting scan number 141 [COUNTRY, 900, null, DURATION]
+I Walk the Line, Johnny Cash, COUNTRY, 2:46
+After scan number 141.
+
+Starting scan number 142 [COUNTRY, 900, Backstreet Boys, ADDING]
+After scan number 142.
+
+Starting scan number 143 [COUNTRY, 900, Backstreet Boys, NAME]
+After scan number 143.
+
+Starting scan number 144 [COUNTRY, 900, Backstreet Boys, DURATION]
+After scan number 144.
+
+Starting scan number 145 [JAZZ, -10, ABBA, ADDING]
+After scan number 145.
+
+Starting scan number 146 [JAZZ, -10, ABBA, NAME]
+After scan number 146.
+
+Starting scan number 147 [JAZZ, -10, ABBA, DURATION]
+After scan number 147.
+
+Starting scan number 148 [JAZZ, -10, null, ADDING]
+After scan number 148.
+
+Starting scan number 149 [JAZZ, -10, null, NAME]
+After scan number 149.
+
+Starting scan number 150 [JAZZ, -10, null, DURATION]
+After scan number 150.
+
+Starting scan number 151 [JAZZ, -10, Backstreet Boys, ADDING]
+After scan number 151.
+
+Starting scan number 152 [JAZZ, -10, Backstreet Boys, NAME]
+After scan number 152.
+
+Starting scan number 153 [JAZZ, -10, Backstreet Boys, DURATION]
+After scan number 153.
+
+Starting scan number 154 [JAZZ, 0, ABBA, ADDING]
+After scan number 154.
+
+Starting scan number 155 [JAZZ, 0, ABBA, NAME]
+After scan number 155.
+
+Starting scan number 156 [JAZZ, 0, ABBA, DURATION]
+After scan number 156.
+
+Starting scan number 157 [JAZZ, 0, null, ADDING]
+After scan number 157.
+
+Starting scan number 158 [JAZZ, 0, null, NAME]
+After scan number 158.
+
+Starting scan number 159 [JAZZ, 0, null, DURATION]
+After scan number 159.
+
+Starting scan number 160 [JAZZ, 0, Backstreet Boys, ADDING]
+After scan number 160.
+
+Starting scan number 161 [JAZZ, 0, Backstreet Boys, NAME]
+After scan number 161.
+
+Starting scan number 162 [JAZZ, 0, Backstreet Boys, DURATION]
+After scan number 162.
+
+Starting scan number 163 [JAZZ, 200, ABBA, ADDING]
+After scan number 163.
+
+Starting scan number 164 [JAZZ, 200, ABBA, NAME]
+After scan number 164.
+
+Starting scan number 165 [JAZZ, 200, ABBA, DURATION]
+After scan number 165.
+
+Starting scan number 166 [JAZZ, 200, null, ADDING]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 166.
+
+Starting scan number 167 [JAZZ, 200, null, NAME]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 167.
+
+Starting scan number 168 [JAZZ, 200, null, DURATION]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 168.
+
+Starting scan number 169 [JAZZ, 200, Backstreet Boys, ADDING]
+After scan number 169.
+
+Starting scan number 170 [JAZZ, 200, Backstreet Boys, NAME]
+After scan number 170.
+
+Starting scan number 171 [JAZZ, 200, Backstreet Boys, DURATION]
+After scan number 171.
+
+Starting scan number 172 [JAZZ, 900, ABBA, ADDING]
+After scan number 172.
+
+Starting scan number 173 [JAZZ, 900, ABBA, NAME]
+After scan number 173.
+
+Starting scan number 174 [JAZZ, 900, ABBA, DURATION]
+After scan number 174.
+
+Starting scan number 175 [JAZZ, 900, null, ADDING]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 175.
+
+Starting scan number 176 [JAZZ, 900, null, NAME]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 176.
+
+Starting scan number 177 [JAZZ, 900, null, DURATION]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 177.
+
+Starting scan number 178 [JAZZ, 900, Backstreet Boys, ADDING]
+After scan number 178.
+
+Starting scan number 179 [JAZZ, 900, Backstreet Boys, NAME]
+After scan number 179.
+
+Starting scan number 180 [JAZZ, 900, Backstreet Boys, DURATION]
+After scan number 180.
+
+Starting scan number 181 [DISCO, -10, ABBA, ADDING]
+After scan number 181.
+
+Starting scan number 182 [DISCO, -10, ABBA, NAME]
+After scan number 182.
+
+Starting scan number 183 [DISCO, -10, ABBA, DURATION]
+After scan number 183.
+
+Starting scan number 184 [DISCO, -10, null, ADDING]
+After scan number 184.
+
+Starting scan number 185 [DISCO, -10, null, NAME]
+After scan number 185.
+
+Starting scan number 186 [DISCO, -10, null, DURATION]
+After scan number 186.
+
+Starting scan number 187 [DISCO, -10, Backstreet Boys, ADDING]
+After scan number 187.
+
+Starting scan number 188 [DISCO, -10, Backstreet Boys, NAME]
+After scan number 188.
+
+Starting scan number 189 [DISCO, -10, Backstreet Boys, DURATION]
+After scan number 189.
+
+Starting scan number 190 [DISCO, 0, ABBA, ADDING]
+After scan number 190.
+
+Starting scan number 191 [DISCO, 0, ABBA, NAME]
+After scan number 191.
+
+Starting scan number 192 [DISCO, 0, ABBA, DURATION]
+After scan number 192.
+
+Starting scan number 193 [DISCO, 0, null, ADDING]
+After scan number 193.
+
+Starting scan number 194 [DISCO, 0, null, NAME]
+After scan number 194.
+
+Starting scan number 195 [DISCO, 0, null, DURATION]
+After scan number 195.
+
+Starting scan number 196 [DISCO, 0, Backstreet Boys, ADDING]
+After scan number 196.
+
+Starting scan number 197 [DISCO, 0, Backstreet Boys, NAME]
+After scan number 197.
+
+Starting scan number 198 [DISCO, 0, Backstreet Boys, DURATION]
+After scan number 198.
+
+Starting scan number 199 [DISCO, 200, ABBA, ADDING]
+After scan number 199.
+
+Starting scan number 200 [DISCO, 200, ABBA, NAME]
+After scan number 200.
+
+Starting scan number 201 [DISCO, 200, ABBA, DURATION]
+After scan number 201.
+
+Starting scan number 202 [DISCO, 200, null, ADDING]
+Y.M.C.A., Village People, DISCO, 3:19
+After scan number 202.
+
+Starting scan number 203 [DISCO, 200, null, NAME]
+Y.M.C.A., Village People, DISCO, 3:19
+After scan number 203.
+
+Starting scan number 204 [DISCO, 200, null, DURATION]
+Y.M.C.A., Village People, DISCO, 3:19
+After scan number 204.
+
+Starting scan number 205 [DISCO, 200, Backstreet Boys, ADDING]
+After scan number 205.
+
+Starting scan number 206 [DISCO, 200, Backstreet Boys, NAME]
+After scan number 206.
+
+Starting scan number 207 [DISCO, 200, Backstreet Boys, DURATION]
+After scan number 207.
+
+Starting scan number 208 [DISCO, 900, ABBA, ADDING]
+Dancing Queen, ABBA, DISCO, 3:51
+After scan number 208.
+
+Starting scan number 209 [DISCO, 900, ABBA, NAME]
+Dancing Queen, ABBA, DISCO, 3:51
+After scan number 209.
+
+Starting scan number 210 [DISCO, 900, ABBA, DURATION]
+Dancing Queen, ABBA, DISCO, 3:51
+After scan number 210.
+
+Starting scan number 211 [DISCO, 900, null, ADDING]
+Y.M.C.A., Village People, DISCO, 3:19
+Dancing Queen, ABBA, DISCO, 3:51
+Le Freak, Chic, DISCO, 5:07
+After scan number 211.
+
+Starting scan number 212 [DISCO, 900, null, NAME]
+Dancing Queen, ABBA, DISCO, 3:51
+Le Freak, Chic, DISCO, 5:07
+Y.M.C.A., Village People, DISCO, 3:19
+After scan number 212.
+
+Starting scan number 213 [DISCO, 900, null, DURATION]
+Y.M.C.A., Village People, DISCO, 3:19
+Dancing Queen, ABBA, DISCO, 3:51
+Le Freak, Chic, DISCO, 5:07
+After scan number 213.
+
+Starting scan number 214 [DISCO, 900, Backstreet Boys, ADDING]
+After scan number 214.
+
+Starting scan number 215 [DISCO, 900, Backstreet Boys, NAME]
+After scan number 215.
+
+Starting scan number 216 [DISCO, 900, Backstreet Boys, DURATION]
+After scan number 216.
+
+Done all scanning.
+Starts scanning...
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+-----------------------------------
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+-----------------------------------
+Unicorn, Noa Kirel, POP, 2:51
+-----------------------------------
+Take Five, Dave Brubeck, JAZZ, 2:55
+-----------------------------------
+After initial scanning
+
+Starting scan number 1 [POP, -10, ABBA, ADDING]
+After scan number 1.
+
+Starting scan number 2 [POP, -10, ABBA, NAME]
+After scan number 2.
+
+Starting scan number 3 [POP, -10, ABBA, DURATION]
+After scan number 3.
+
+Starting scan number 4 [POP, -10, null, ADDING]
+After scan number 4.
+
+Starting scan number 5 [POP, -10, null, NAME]
+After scan number 5.
+
+Starting scan number 6 [POP, -10, null, DURATION]
+After scan number 6.
+
+Starting scan number 7 [POP, -10, Backstreet Boys, ADDING]
+After scan number 7.
+
+Starting scan number 8 [POP, -10, Backstreet Boys, NAME]
+After scan number 8.
+
+Starting scan number 9 [POP, -10, Backstreet Boys, DURATION]
+After scan number 9.
+
+Starting scan number 10 [POP, 0, ABBA, ADDING]
+After scan number 10.
+
+Starting scan number 11 [POP, 0, ABBA, NAME]
+After scan number 11.
+
+Starting scan number 12 [POP, 0, ABBA, DURATION]
+After scan number 12.
+
+Starting scan number 13 [POP, 0, null, ADDING]
+After scan number 13.
+
+Starting scan number 14 [POP, 0, null, NAME]
+After scan number 14.
+
+Starting scan number 15 [POP, 0, null, DURATION]
+After scan number 15.
+
+Starting scan number 16 [POP, 0, Backstreet Boys, ADDING]
+After scan number 16.
+
+Starting scan number 17 [POP, 0, Backstreet Boys, NAME]
+After scan number 17.
+
+Starting scan number 18 [POP, 0, Backstreet Boys, DURATION]
+After scan number 18.
+
+Starting scan number 19 [POP, 200, ABBA, ADDING]
+After scan number 19.
+
+Starting scan number 20 [POP, 200, ABBA, NAME]
+After scan number 20.
+
+Starting scan number 21 [POP, 200, ABBA, DURATION]
+After scan number 21.
+
+Starting scan number 22 [POP, 200, null, ADDING]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 22.
+
+Starting scan number 23 [POP, 200, null, NAME]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 23.
+
+Starting scan number 24 [POP, 200, null, DURATION]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 24.
+
+Starting scan number 25 [POP, 200, Backstreet Boys, ADDING]
+After scan number 25.
+
+Starting scan number 26 [POP, 200, Backstreet Boys, NAME]
+After scan number 26.
+
+Starting scan number 27 [POP, 200, Backstreet Boys, DURATION]
+After scan number 27.
+
+Starting scan number 28 [POP, 900, ABBA, ADDING]
+After scan number 28.
+
+Starting scan number 29 [POP, 900, ABBA, NAME]
+After scan number 29.
+
+Starting scan number 30 [POP, 900, ABBA, DURATION]
+After scan number 30.
+
+Starting scan number 31 [POP, 900, null, ADDING]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 31.
+
+Starting scan number 32 [POP, 900, null, NAME]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 32.
+
+Starting scan number 33 [POP, 900, null, DURATION]
+Unicorn, Noa Kirel, POP, 2:51
+After scan number 33.
+
+Starting scan number 34 [POP, 900, Backstreet Boys, ADDING]
+After scan number 34.
+
+Starting scan number 35 [POP, 900, Backstreet Boys, NAME]
+After scan number 35.
+
+Starting scan number 36 [POP, 900, Backstreet Boys, DURATION]
+After scan number 36.
+
+Starting scan number 37 [ROCK, -10, ABBA, ADDING]
+After scan number 37.
+
+Starting scan number 38 [ROCK, -10, ABBA, NAME]
+After scan number 38.
+
+Starting scan number 39 [ROCK, -10, ABBA, DURATION]
+After scan number 39.
+
+Starting scan number 40 [ROCK, -10, null, ADDING]
+After scan number 40.
+
+Starting scan number 41 [ROCK, -10, null, NAME]
+After scan number 41.
+
+Starting scan number 42 [ROCK, -10, null, DURATION]
+After scan number 42.
+
+Starting scan number 43 [ROCK, -10, Backstreet Boys, ADDING]
+After scan number 43.
+
+Starting scan number 44 [ROCK, -10, Backstreet Boys, NAME]
+After scan number 44.
+
+Starting scan number 45 [ROCK, -10, Backstreet Boys, DURATION]
+After scan number 45.
+
+Starting scan number 46 [ROCK, 0, ABBA, ADDING]
+After scan number 46.
+
+Starting scan number 47 [ROCK, 0, ABBA, NAME]
+After scan number 47.
+
+Starting scan number 48 [ROCK, 0, ABBA, DURATION]
+After scan number 48.
+
+Starting scan number 49 [ROCK, 0, null, ADDING]
+After scan number 49.
+
+Starting scan number 50 [ROCK, 0, null, NAME]
+After scan number 50.
+
+Starting scan number 51 [ROCK, 0, null, DURATION]
+After scan number 51.
+
+Starting scan number 52 [ROCK, 0, Backstreet Boys, ADDING]
+After scan number 52.
+
+Starting scan number 53 [ROCK, 0, Backstreet Boys, NAME]
+After scan number 53.
+
+Starting scan number 54 [ROCK, 0, Backstreet Boys, DURATION]
+After scan number 54.
+
+Starting scan number 55 [ROCK, 200, ABBA, ADDING]
+After scan number 55.
+
+Starting scan number 56 [ROCK, 200, ABBA, NAME]
+After scan number 56.
+
+Starting scan number 57 [ROCK, 200, ABBA, DURATION]
+After scan number 57.
+
+Starting scan number 58 [ROCK, 200, null, ADDING]
+After scan number 58.
+
+Starting scan number 59 [ROCK, 200, null, NAME]
+After scan number 59.
+
+Starting scan number 60 [ROCK, 200, null, DURATION]
+After scan number 60.
+
+Starting scan number 61 [ROCK, 200, Backstreet Boys, ADDING]
+After scan number 61.
+
+Starting scan number 62 [ROCK, 200, Backstreet Boys, NAME]
+After scan number 62.
+
+Starting scan number 63 [ROCK, 200, Backstreet Boys, DURATION]
+After scan number 63.
+
+Starting scan number 64 [ROCK, 900, ABBA, ADDING]
+After scan number 64.
+
+Starting scan number 65 [ROCK, 900, ABBA, NAME]
+After scan number 65.
+
+Starting scan number 66 [ROCK, 900, ABBA, DURATION]
+After scan number 66.
+
+Starting scan number 67 [ROCK, 900, null, ADDING]
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+After scan number 67.
+
+Starting scan number 68 [ROCK, 900, null, NAME]
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+After scan number 68.
+
+Starting scan number 69 [ROCK, 900, null, DURATION]
+Born In The U.S.A., Bruce Springsteen, ROCK, 4:38
+After scan number 69.
+
+Starting scan number 70 [ROCK, 900, Backstreet Boys, ADDING]
+After scan number 70.
+
+Starting scan number 71 [ROCK, 900, Backstreet Boys, NAME]
+After scan number 71.
+
+Starting scan number 72 [ROCK, 900, Backstreet Boys, DURATION]
+After scan number 72.
+
+Starting scan number 73 [HIP_HOP, -10, ABBA, ADDING]
+After scan number 73.
+
+Starting scan number 74 [HIP_HOP, -10, ABBA, NAME]
+After scan number 74.
+
+Starting scan number 75 [HIP_HOP, -10, ABBA, DURATION]
+After scan number 75.
+
+Starting scan number 76 [HIP_HOP, -10, null, ADDING]
+After scan number 76.
+
+Starting scan number 77 [HIP_HOP, -10, null, NAME]
+After scan number 77.
+
+Starting scan number 78 [HIP_HOP, -10, null, DURATION]
+After scan number 78.
+
+Starting scan number 79 [HIP_HOP, -10, Backstreet Boys, ADDING]
+After scan number 79.
+
+Starting scan number 80 [HIP_HOP, -10, Backstreet Boys, NAME]
+After scan number 80.
+
+Starting scan number 81 [HIP_HOP, -10, Backstreet Boys, DURATION]
+After scan number 81.
+
+Starting scan number 82 [HIP_HOP, 0, ABBA, ADDING]
+After scan number 82.
+
+Starting scan number 83 [HIP_HOP, 0, ABBA, NAME]
+After scan number 83.
+
+Starting scan number 84 [HIP_HOP, 0, ABBA, DURATION]
+After scan number 84.
+
+Starting scan number 85 [HIP_HOP, 0, null, ADDING]
+After scan number 85.
+
+Starting scan number 86 [HIP_HOP, 0, null, NAME]
+After scan number 86.
+
+Starting scan number 87 [HIP_HOP, 0, null, DURATION]
+After scan number 87.
+
+Starting scan number 88 [HIP_HOP, 0, Backstreet Boys, ADDING]
+After scan number 88.
+
+Starting scan number 89 [HIP_HOP, 0, Backstreet Boys, NAME]
+After scan number 89.
+
+Starting scan number 90 [HIP_HOP, 0, Backstreet Boys, DURATION]
+After scan number 90.
+
+Starting scan number 91 [HIP_HOP, 200, ABBA, ADDING]
+After scan number 91.
+
+Starting scan number 92 [HIP_HOP, 200, ABBA, NAME]
+After scan number 92.
+
+Starting scan number 93 [HIP_HOP, 200, ABBA, DURATION]
+After scan number 93.
+
+Starting scan number 94 [HIP_HOP, 200, null, ADDING]
+After scan number 94.
+
+Starting scan number 95 [HIP_HOP, 200, null, NAME]
+After scan number 95.
+
+Starting scan number 96 [HIP_HOP, 200, null, DURATION]
+After scan number 96.
+
+Starting scan number 97 [HIP_HOP, 200, Backstreet Boys, ADDING]
+After scan number 97.
+
+Starting scan number 98 [HIP_HOP, 200, Backstreet Boys, NAME]
+After scan number 98.
+
+Starting scan number 99 [HIP_HOP, 200, Backstreet Boys, DURATION]
+After scan number 99.
+
+Starting scan number 100 [HIP_HOP, 900, ABBA, ADDING]
+After scan number 100.
+
+Starting scan number 101 [HIP_HOP, 900, ABBA, NAME]
+After scan number 101.
+
+Starting scan number 102 [HIP_HOP, 900, ABBA, DURATION]
+After scan number 102.
+
+Starting scan number 103 [HIP_HOP, 900, null, ADDING]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 103.
+
+Starting scan number 104 [HIP_HOP, 900, null, NAME]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 104.
+
+Starting scan number 105 [HIP_HOP, 900, null, DURATION]
+Easter Egg, Dvir ft. Gal, HIP_HOP, 7:17
+After scan number 105.
+
+Starting scan number 106 [HIP_HOP, 900, Backstreet Boys, ADDING]
+After scan number 106.
+
+Starting scan number 107 [HIP_HOP, 900, Backstreet Boys, NAME]
+After scan number 107.
+
+Starting scan number 108 [HIP_HOP, 900, Backstreet Boys, DURATION]
+After scan number 108.
+
+Starting scan number 109 [COUNTRY, -10, ABBA, ADDING]
+After scan number 109.
+
+Starting scan number 110 [COUNTRY, -10, ABBA, NAME]
+After scan number 110.
+
+Starting scan number 111 [COUNTRY, -10, ABBA, DURATION]
+After scan number 111.
+
+Starting scan number 112 [COUNTRY, -10, null, ADDING]
+After scan number 112.
+
+Starting scan number 113 [COUNTRY, -10, null, NAME]
+After scan number 113.
+
+Starting scan number 114 [COUNTRY, -10, null, DURATION]
+After scan number 114.
+
+Starting scan number 115 [COUNTRY, -10, Backstreet Boys, ADDING]
+After scan number 115.
+
+Starting scan number 116 [COUNTRY, -10, Backstreet Boys, NAME]
+After scan number 116.
+
+Starting scan number 117 [COUNTRY, -10, Backstreet Boys, DURATION]
+After scan number 117.
+
+Starting scan number 118 [COUNTRY, 0, ABBA, ADDING]
+After scan number 118.
+
+Starting scan number 119 [COUNTRY, 0, ABBA, NAME]
+After scan number 119.
+
+Starting scan number 120 [COUNTRY, 0, ABBA, DURATION]
+After scan number 120.
+
+Starting scan number 121 [COUNTRY, 0, null, ADDING]
+After scan number 121.
+
+Starting scan number 122 [COUNTRY, 0, null, NAME]
+After scan number 122.
+
+Starting scan number 123 [COUNTRY, 0, null, DURATION]
+After scan number 123.
+
+Starting scan number 124 [COUNTRY, 0, Backstreet Boys, ADDING]
+After scan number 124.
+
+Starting scan number 125 [COUNTRY, 0, Backstreet Boys, NAME]
+After scan number 125.
+
+Starting scan number 126 [COUNTRY, 0, Backstreet Boys, DURATION]
+After scan number 126.
+
+Starting scan number 127 [COUNTRY, 200, ABBA, ADDING]
+After scan number 127.
+
+Starting scan number 128 [COUNTRY, 200, ABBA, NAME]
+After scan number 128.
+
+Starting scan number 129 [COUNTRY, 200, ABBA, DURATION]
+After scan number 129.
+
+Starting scan number 130 [COUNTRY, 200, null, ADDING]
+After scan number 130.
+
+Starting scan number 131 [COUNTRY, 200, null, NAME]
+After scan number 131.
+
+Starting scan number 132 [COUNTRY, 200, null, DURATION]
+After scan number 132.
+
+Starting scan number 133 [COUNTRY, 200, Backstreet Boys, ADDING]
+After scan number 133.
+
+Starting scan number 134 [COUNTRY, 200, Backstreet Boys, NAME]
+After scan number 134.
+
+Starting scan number 135 [COUNTRY, 200, Backstreet Boys, DURATION]
+After scan number 135.
+
+Starting scan number 136 [COUNTRY, 900, ABBA, ADDING]
+After scan number 136.
+
+Starting scan number 137 [COUNTRY, 900, ABBA, NAME]
+After scan number 137.
+
+Starting scan number 138 [COUNTRY, 900, ABBA, DURATION]
+After scan number 138.
+
+Starting scan number 139 [COUNTRY, 900, null, ADDING]
+After scan number 139.
+
+Starting scan number 140 [COUNTRY, 900, null, NAME]
+After scan number 140.
+
+Starting scan number 141 [COUNTRY, 900, null, DURATION]
+After scan number 141.
+
+Starting scan number 142 [COUNTRY, 900, Backstreet Boys, ADDING]
+After scan number 142.
+
+Starting scan number 143 [COUNTRY, 900, Backstreet Boys, NAME]
+After scan number 143.
+
+Starting scan number 144 [COUNTRY, 900, Backstreet Boys, DURATION]
+After scan number 144.
+
+Starting scan number 145 [JAZZ, -10, ABBA, ADDING]
+After scan number 145.
+
+Starting scan number 146 [JAZZ, -10, ABBA, NAME]
+After scan number 146.
+
+Starting scan number 147 [JAZZ, -10, ABBA, DURATION]
+After scan number 147.
+
+Starting scan number 148 [JAZZ, -10, null, ADDING]
+After scan number 148.
+
+Starting scan number 149 [JAZZ, -10, null, NAME]
+After scan number 149.
+
+Starting scan number 150 [JAZZ, -10, null, DURATION]
+After scan number 150.
+
+Starting scan number 151 [JAZZ, -10, Backstreet Boys, ADDING]
+After scan number 151.
+
+Starting scan number 152 [JAZZ, -10, Backstreet Boys, NAME]
+After scan number 152.
+
+Starting scan number 153 [JAZZ, -10, Backstreet Boys, DURATION]
+After scan number 153.
+
+Starting scan number 154 [JAZZ, 0, ABBA, ADDING]
+After scan number 154.
+
+Starting scan number 155 [JAZZ, 0, ABBA, NAME]
+After scan number 155.
+
+Starting scan number 156 [JAZZ, 0, ABBA, DURATION]
+After scan number 156.
+
+Starting scan number 157 [JAZZ, 0, null, ADDING]
+After scan number 157.
+
+Starting scan number 158 [JAZZ, 0, null, NAME]
+After scan number 158.
+
+Starting scan number 159 [JAZZ, 0, null, DURATION]
+After scan number 159.
+
+Starting scan number 160 [JAZZ, 0, Backstreet Boys, ADDING]
+After scan number 160.
+
+Starting scan number 161 [JAZZ, 0, Backstreet Boys, NAME]
+After scan number 161.
+
+Starting scan number 162 [JAZZ, 0, Backstreet Boys, DURATION]
+After scan number 162.
+
+Starting scan number 163 [JAZZ, 200, ABBA, ADDING]
+After scan number 163.
+
+Starting scan number 164 [JAZZ, 200, ABBA, NAME]
+After scan number 164.
+
+Starting scan number 165 [JAZZ, 200, ABBA, DURATION]
+After scan number 165.
+
+Starting scan number 166 [JAZZ, 200, null, ADDING]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 166.
+
+Starting scan number 167 [JAZZ, 200, null, NAME]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 167.
+
+Starting scan number 168 [JAZZ, 200, null, DURATION]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 168.
+
+Starting scan number 169 [JAZZ, 200, Backstreet Boys, ADDING]
+After scan number 169.
+
+Starting scan number 170 [JAZZ, 200, Backstreet Boys, NAME]
+After scan number 170.
+
+Starting scan number 171 [JAZZ, 200, Backstreet Boys, DURATION]
+After scan number 171.
+
+Starting scan number 172 [JAZZ, 900, ABBA, ADDING]
+After scan number 172.
+
+Starting scan number 173 [JAZZ, 900, ABBA, NAME]
+After scan number 173.
+
+Starting scan number 174 [JAZZ, 900, ABBA, DURATION]
+After scan number 174.
+
+Starting scan number 175 [JAZZ, 900, null, ADDING]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 175.
+
+Starting scan number 176 [JAZZ, 900, null, NAME]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 176.
+
+Starting scan number 177 [JAZZ, 900, null, DURATION]
+Take Five, Dave Brubeck, JAZZ, 2:55
+After scan number 177.
+
+Starting scan number 178 [JAZZ, 900, Backstreet Boys, ADDING]
+After scan number 178.
+
+Starting scan number 179 [JAZZ, 900, Backstreet Boys, NAME]
+After scan number 179.
+
+Starting scan number 180 [JAZZ, 900, Backstreet Boys, DURATION]
+After scan number 180.
+
+Starting scan number 181 [DISCO, -10, ABBA, ADDING]
+After scan number 181.
+
+Starting scan number 182 [DISCO, -10, ABBA, NAME]
+After scan number 182.
+
+Starting scan number 183 [DISCO, -10, ABBA, DURATION]
+After scan number 183.
+
+Starting scan number 184 [DISCO, -10, null, ADDING]
+After scan number 184.
+
+Starting scan number 185 [DISCO, -10, null, NAME]
+After scan number 185.
+
+Starting scan number 186 [DISCO, -10, null, DURATION]
+After scan number 186.
+
+Starting scan number 187 [DISCO, -10, Backstreet Boys, ADDING]
+After scan number 187.
+
+Starting scan number 188 [DISCO, -10, Backstreet Boys, NAME]
+After scan number 188.
+
+Starting scan number 189 [DISCO, -10, Backstreet Boys, DURATION]
+After scan number 189.
+
+Starting scan number 190 [DISCO, 0, ABBA, ADDING]
+After scan number 190.
+
+Starting scan number 191 [DISCO, 0, ABBA, NAME]
+After scan number 191.
+
+Starting scan number 192 [DISCO, 0, ABBA, DURATION]
+After scan number 192.
+
+Starting scan number 193 [DISCO, 0, null, ADDING]
+After scan number 193.
+
+Starting scan number 194 [DISCO, 0, null, NAME]
+After scan number 194.
+
+Starting scan number 195 [DISCO, 0, null, DURATION]
+After scan number 195.
+
+Starting scan number 196 [DISCO, 0, Backstreet Boys, ADDING]
+After scan number 196.
+
+Starting scan number 197 [DISCO, 0, Backstreet Boys, NAME]
+After scan number 197.
+
+Starting scan number 198 [DISCO, 0, Backstreet Boys, DURATION]
+After scan number 198.
+
+Starting scan number 199 [DISCO, 200, ABBA, ADDING]
+After scan number 199.
+
+Starting scan number 200 [DISCO, 200, ABBA, NAME]
+After scan number 200.
+
+Starting scan number 201 [DISCO, 200, ABBA, DURATION]
+After scan number 201.
+
+Starting scan number 202 [DISCO, 200, null, ADDING]
+After scan number 202.
+
+Starting scan number 203 [DISCO, 200, null, NAME]
+After scan number 203.
+
+Starting scan number 204 [DISCO, 200, null, DURATION]
+After scan number 204.
+
+Starting scan number 205 [DISCO, 200, Backstreet Boys, ADDING]
+After scan number 205.
+
+Starting scan number 206 [DISCO, 200, Backstreet Boys, NAME]
+After scan number 206.
+
+Starting scan number 207 [DISCO, 200, Backstreet Boys, DURATION]
+After scan number 207.
+
+Starting scan number 208 [DISCO, 900, ABBA, ADDING]
+After scan number 208.
+
+Starting scan number 209 [DISCO, 900, ABBA, NAME]
+After scan number 209.
+
+Starting scan number 210 [DISCO, 900, ABBA, DURATION]
+After scan number 210.
+
+Starting scan number 211 [DISCO, 900, null, ADDING]
+After scan number 211.
+
+Starting scan number 212 [DISCO, 900, null, NAME]
+After scan number 212.
+
+Starting scan number 213 [DISCO, 900, null, DURATION]
+After scan number 213.
+
+Starting scan number 214 [DISCO, 900, Backstreet Boys, ADDING]
+After scan number 214.
+
+Starting scan number 215 [DISCO, 900, Backstreet Boys, NAME]
+After scan number 215.
+
+Starting scan number 216 [DISCO, 900, Backstreet Boys, DURATION]
+After scan number 216.
+
+Done all scanning.
+
+Testing of part B is over!
