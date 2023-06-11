@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * This class symbolise one song. it has name, artist, genre and duration
  */
@@ -51,7 +53,23 @@ public class Song  implements Cloneable {
     // NEED TO OVERRIDE
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return name.hashCode() + artist.hashCode();
+    }
+
+    /**
+     * checks if two objects are equals.
+     * @param obj the second object
+     * @return false if the objects are from different classes, same if they are from the same class
+     * and have a same hashcode/string
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        } else if (hashCode() == obj.hashCode()) {
+            return true;
+        } //else if (toString().equals(obj.toString())) {
+        return false;
     }
 
     /**
