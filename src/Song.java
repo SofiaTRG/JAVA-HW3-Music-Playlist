@@ -46,6 +46,22 @@ public class Song  implements Cloneable {
         return name + artist + genre + duration;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
     /**
      * override of hashcode so we can use the equals
      * @return
@@ -57,19 +73,15 @@ public class Song  implements Cloneable {
     }
 
     /**
-     * checks if two objects are equals.
-     * @param obj the second object
-     * @return false if the objects are from different classes, same if they are from the same class
-     * and have a same hashcode/string
+     * checks if two songs has same name and artist
+     * @param otherSong the second song
+     * @return false if the song are different or the second song is null,
+     * true if they share same name and artist
      */
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null || getClass() != obj.getClass()) {
+    public boolean equals(Song otherSong) {
+        if (otherSong == null) {
             return false;
-        } else if (hashCode() == obj.hashCode()) {
-            return true;
-        } //else if (toString().equals(obj.toString())) {
-        return false;
+        } else return getName().equals(otherSong.getName()) && getArtist().equals(otherSong.getArtist());
     }
 
     /**
