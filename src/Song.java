@@ -1,9 +1,8 @@
-import java.util.Objects;
-
 /**
  * This class symbolise one song. it has name, artist, genre and duration
  */
-public class Song  implements Cloneable {
+// HOW TO MAKE THE DURETION INTO MM:SS??
+public class Song implements Cloneable {
     final private String name;
     final private String artist;
     final private Genre genre;
