@@ -3,19 +3,22 @@ import java.util.Iterator;
 
 // SHOULD IT BE AN ARRAYLIST OR ARRAY??
 
-public class Playlist extends Iterable<T> implements Cloneable {
-    private static ArrayList<Song> playlist;
+public class Playlist implements Cloneable, Iterable<Song> {
+
+    // NU MA
+    private ArrayList<Song> playlist;
 
     public Playlist(Song... songs) {
+        playlist = new ArrayList<Song>(songs.length);
         for (Song song: songs) {
             playlist.add(song);
         }
     }
 
-    // ???????
-    public static void setPlaylist(ArrayList<Song> playlist) {
-        Playlist.playlist = playlist;
+    public void addSong() {
+
     }
+
 
     @Override
     public Iterator iterator() {
