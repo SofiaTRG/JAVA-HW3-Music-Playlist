@@ -1,32 +1,58 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
-// SHOULD IT BE AN ARRAYLIST OR ARRAY??
 
 public class Playlist implements Cloneable, Iterable<Song> {
-
-    // NU MA
     private ArrayList<Song> playlist;
 
     public Playlist(Song... songs) {
-        playlist = new ArrayList<Song>(songs.length);
-        for (Song song: songs) {
-            playlist.add(song);
+        playlist = new ArrayList<>(songs.length);
+        playlist.addAll(Arrays.asList(songs));
+    }
+
+    /**
+     * Adds a song to playlist
+     * @param song the song we want to add
+     */
+    public void addSong(Song song) {
+        playlist.add(song);
+    }
+
+    /**
+     *
+     * @return
+     */
+    @Override
+    public Iterator<Song> iterator() {
+        return playlist.iterator();
+    }
+
+    /**
+     * A deep clone of playlist. makes a new empty playlist in the size of the previous one and puting a clone
+     * of each song from the previous playlist to the new one.
+     * @return deep copy of previous playlist
+     */
+    @Override
+    protected Playlist clone() {
+        try {
+            Playlist copy = (Playlist) super.clone();
+            copy.playlist = new ArrayList<>(this.playlist.size());
+            for (Song song : this.playlist) {
+                copy.playlist.add(song.clone());
+            }
+            return copy;
+        } catch (CloneNotSupportedException e) {
+            return null;
         }
     }
 
-    public void addSong() {
-
-    }
-
-
-    @Override
-    public Iterator iterator() {
-        return null;
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    /**
+     * removes a song from a playlist
+     * @param song the song we want to remove
+     * @return true if the playlist contained the song before the remove, false otherwise
+     */
+    public boolean removeSong(Song song) {
+        playlist.remove(song);
     }
 }

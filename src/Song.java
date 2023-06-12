@@ -3,10 +3,10 @@
  */
 // HOW TO MAKE THE DURETION INTO MM:SS??
 public class Song implements Cloneable {
-    final private String name;
-    final private String artist;
-    final private Genre genre;
-    final private int duration;
+    private String name;
+    private String artist;
+    private Genre genre;
+    private int duration;
 
     /**
      * constructor of song class
@@ -23,15 +23,18 @@ public class Song implements Cloneable {
     }
 
     /**
-     * An override of clone(). it does a deep clone of a song
-     * @return a deep clone of the song
-     * @throws CloneNotSupportedException cannot clone the song
+     * An override of clone(). it does a deep clone of a song.
+     * @return a deep clone of the song. if the method failed to make a copy it will return null.
      */
-    // do it covient return type
     @Override
-    public Song clone() throws CloneNotSupportedException {
+    public Song clone() {
         try {
-            return new Song(name, artist, genre, duration);
+            Song copy = (Song) super.clone();
+            copy.name = this.name;
+            copy.artist = this.artist;
+            copy.genre = this.genre;
+            copy.duration = this.duration;
+            return copy;
         } catch (CloneNotSupportedException e) {
             return null;
         }
@@ -81,6 +84,10 @@ public class Song implements Cloneable {
         if (otherSong == null) {
             return false;
         } else return getName().equals(otherSong.getName()) && getArtist().equals(otherSong.getArtist());
+    }
+
+    public void setDuration(int i) {
+        duration = i;
     }
 
     /**
