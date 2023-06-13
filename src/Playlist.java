@@ -1,12 +1,10 @@
-import javafx.scene.Node;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
 
 public class Playlist implements Cloneable, Iterable<Song> {
-    private ArrayList<Song> playlist;
+    private static ArrayList<Song> playlist;
 
     public Playlist(Song... songs) {
         playlist = new ArrayList<>(songs.length);
@@ -57,7 +55,16 @@ public class Playlist implements Cloneable, Iterable<Song> {
         return playlist.remove(song);
     }
 
+    public void setScanningOrder(ScanningOrder order) {
+    }
+
+    @Override
+    public Iterator<Song> iterator() {
+        return new PlaylistIterator(playlist.iterator());
+    }
+
     public void filterArtist(String artist) {
+
     }
 
     public void filterDuration(int duration) {
@@ -66,25 +73,29 @@ public class Playlist implements Cloneable, Iterable<Song> {
     public void filterGenre(Song.Genre genre) {
     }
 
-    public void setScanningOrder(ScanningOrder order) {
-    }
 
-    // FINISH THE ITERATOR
-    static class PlaylistIterator<Song> implements Iterator<Song> {
-        private Node<Song> nextItem;
-        public PlaylistIterator(Node<Song> nextItem) {
-            this.nextItem = nextItem;
+    private static class PlaylistIterator implements Iterator<Song> {
+        private int currentIndex;
+
+        public PlaylistIterator() {
+            currentIndex = 0;
         }
+
         @Override
         public Song next() {
-            Song val = nextItem.getValue();
-            nextItem = nextItem.getNext();
-            return val;
+            if (hasNext()) {
+                Song song = playlist.get(currentIndex);
+                currentIndex++;
+                return song;
+            }
+            return null; // or throw NoSuchElementException
         }
+
         @Override
         public boolean hasNext() {
-            return nextItem != null;
+            return currentIndex < playlist.size();
         }
+
     }
 
 }

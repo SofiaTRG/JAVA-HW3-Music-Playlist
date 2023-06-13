@@ -45,7 +45,7 @@ public class Song implements Cloneable {
      */
     @Override
     public String toString() {
-        return name + artist + genre + duration;
+        return "(" + name + "," + artist + "," + genre + "," + duration + ")";
     }
 
     public String getName() {
