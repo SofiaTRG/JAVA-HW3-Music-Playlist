@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 
-public class Playlist implements Cloneable, Iterable<Song> {
+public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterable{
     private static ArrayList<Song> playlist;
 
     public Playlist(Song... songs) {
@@ -63,13 +63,16 @@ public class Playlist implements Cloneable, Iterable<Song> {
         return new PlaylistIterator(playlist.iterator());
     }
 
+    @Override
     public void filterArtist(String artist) {
 
     }
 
+    @Override
     public void filterDuration(int duration) {
     }
 
+    @Override
     public void filterGenre(Song.Genre genre) {
     }
 
