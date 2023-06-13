@@ -60,7 +60,7 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
     @Override
     public Iterator<Song> iterator() {
-        return new PlaylistIterator(playlist.iterator());
+        return new PlaylistIterator();
     }
 
     @Override
@@ -98,7 +98,6 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         public boolean hasNext() {
             return currentIndex < playlist.size();
         }
-
     }
 
 }
