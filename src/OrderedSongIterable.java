@@ -1,3 +1,3 @@
 public interface OrderedSongIterable extends Iterable<Song>{
-    void setScanningOrder();
+    public Playlist setScanningOrder(ScanningOrder order);
 }

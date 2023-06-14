@@ -71,8 +71,13 @@ public class Song implements Cloneable {
     // NEED TO OVERRIDE
     @Override
     public int hashCode() {
-        return name.hashCode() + artist.hashCode();
-    }
+        int result = 17;  // Choose an arbitrary prime number as the initial value
+        result = 31 * result + name.hashCode();
+        result = 31 * result + artist.hashCode();
+        result = 31 * result + genre.hashCode();
+        result = 31* result + duration;
+        return result;
+        }
 
     /**
      * checks if two songs has same name and artist
