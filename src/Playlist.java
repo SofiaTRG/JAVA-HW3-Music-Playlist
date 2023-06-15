@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Comparator;
+import java.util.*;
 
 
 public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterable, OrderedSongIterable{
@@ -64,6 +61,9 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
     @Override
     public Playlist filterArtist(String artist) {
+        if (artist == null) {
+            return this;
+        }
         ArrayList<Song> filteredList = new ArrayList<>();
         Iterator<Song> iterator = playlist.iterator();
         while (iterator.hasNext()) {
@@ -97,6 +97,9 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
     @Override
     public Playlist filterGenre(Song.Genre genre) {
+        if (genre == null) {
+            return this;
+        }
         ArrayList<Song> filteredList = new ArrayList<>();
         Iterator<Song> iterator = playlist.iterator();
         while (iterator.hasNext()) {
@@ -114,19 +117,20 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
     @Override
     public Playlist setScanningOrder(ScanningOrder order) {
+        ArrayList<Song> filteredList = new ArrayList<>();
+        Playlist filteredPlaylist = new Playlist();
+
         switch (order) {
             case ADDING:
                 return this;
             case NAME:
-                return playlist.sort(Comparator.comparing(Song::getName));
-                break;
+                Collections.sort(filteredList, Comparator.comparing(Song::getName));
+                filteredPlaylist.playlist = filteredList;
             case DURATION:
-                return playlist.sort(Comparator.comparing(Song::getDuration).reversed()); // Sort by duration in descending order
-
+                Collections.sort(filteredList, Comparator.comparing(Song::getDuration).reversed());
+                filteredPlaylist.playlist = filteredList;
         }
-
-        // Return the modified or filtered playlist based on the order
-        return this;
+        return filteredPlaylist;
     }
 
 
