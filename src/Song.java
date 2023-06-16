@@ -45,7 +45,12 @@ public class Song implements Cloneable {
      */
     @Override
     public String toString() {
-        return "(" + name + "," + artist + "," + genre + "," + duration + ")";
+        return name + ", " + artist + ", " + genre + ", " + stringDuration(duration);
+    }
+    private String stringDuration(int duration) {
+        String minutes = new String(String.valueOf(duration/60));
+        String seconds = String.format("%02d", duration%60);
+        return minutes + ":" + seconds;
     }
 
     public String getName() {

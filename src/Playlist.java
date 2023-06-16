@@ -31,7 +31,7 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
      * @return deep copy of previous playlist
      */
     @Override
-    public Playlist  clone() {
+    public Playlist clone() {
         try {
             Playlist copy = (Playlist) super.clone();
             copy.playlist = new ArrayList<>(this.playlist.size());
@@ -171,6 +171,16 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         return true;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder playlistString = new StringBuilder();
+        for (Song song : playlist) {
+            playlistString.append("(");
+            playlistString.append(song.toString());
+            playlistString.append(")");
+        }
+        return "[" + playlistString.toString() + "]";
+    }
 
     private static class PlaylistIterator implements Iterator<Song> {
         private int currentIndex;
