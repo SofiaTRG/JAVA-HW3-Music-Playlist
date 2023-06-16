@@ -34,15 +34,16 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
     public Playlist clone() {
         try {
             Playlist copy = (Playlist) super.clone();
-            copy.playlist = new ArrayList<>(this.playlist.size());
-            for (Song song : this.playlist) {
-                copy.playlist.add(song.clone());
+            copy.playlist = new ArrayList<>(this.playlist);
+            for (int i = 0; i < copy.playlist.size(); i++) {
+                copy.playlist.set(i, copy.playlist.get(i).clone());
             }
             return copy;
         } catch (CloneNotSupportedException e) {
             return null;
         }
     }
+
 
     /**
      * removes a song from a playlist
@@ -117,21 +118,25 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
     @Override
     public Playlist setScanningOrder(ScanningOrder order) {
-        ArrayList<Song> filteredList = new ArrayList<>();
         Playlist filteredPlaylist = new Playlist();
 
         switch (order) {
             case ADDING:
                 return this;
             case NAME:
-                Collections.sort(filteredList, Comparator.comparing(Song::getName));
-                filteredPlaylist.playlist = filteredList;
+                ArrayList<Song> nameSortedList = new ArrayList<>(playlist);
+                Collections.sort(nameSortedList, Comparator.comparing(Song::getName));
+                filteredPlaylist.playlist = nameSortedList;
+                break;
             case DURATION:
-                Collections.sort(filteredList, Comparator.comparing(Song::getDuration).reversed());
-                filteredPlaylist.playlist = filteredList;
+                ArrayList<Song> durationSortedList = new ArrayList<>(playlist);
+                Collections.sort(durationSortedList, Comparator.comparing(Song::getDuration).reversed());
+                filteredPlaylist.playlist = durationSortedList;
+                break;
         }
         return filteredPlaylist;
     }
+
 
 
     @Override
@@ -153,9 +158,9 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         }
         Playlist otherPlaylist = (Playlist) other;
 
-        if (playlist.size() != otherPlaylist.playlist.size()) {
-            return false;
-        }
+//        if (playlist.size() != otherPlaylist.playlist.size()) {
+//            return false;
+//        }
 
         Iterator<Song> thisIterator = playlist.iterator();
         Iterator<Song> otherIterator = otherPlaylist.playlist.iterator();
@@ -174,13 +179,22 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
     @Override
     public String toString() {
         StringBuilder playlistString = new StringBuilder();
-        for (Song song : playlist) {
+        Iterator<Song> iterator = playlist.iterator();
+
+        while (iterator.hasNext()) {
+            Song thisSong = iterator.next();
             playlistString.append("(");
-            playlistString.append(song.toString());
+            playlistString.append(thisSong.toString());
             playlistString.append(")");
+
+            if (iterator.hasNext()) {
+                playlistString.append(", ");
+            }
         }
+
         return "[" + playlistString.toString() + "]";
     }
+
 
     private static class PlaylistIterator implements Iterator<Song> {
         private int currentIndex;

@@ -1,7 +1,5 @@
 public class SongAlreadyExistsException extends RuntimeException{
-    public SongAlreadyExistsException() {
-        System.out.println("Cannot add the song!");
-    }
+    public SongAlreadyExistsException() {}
     public SongAlreadyExistsException(String message) {
         super(message);
     }
