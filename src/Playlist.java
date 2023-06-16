@@ -13,15 +13,11 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
      * 
      * @param song
      */
-    public void addSong(Song song) {
-        try {
-            if (!playlist.contains(song)) {
-                playlist.add(song);
-            } else {
-                throw new SongAlreadyExistsException();
-            }
-        } catch (SongAlreadyExistsException e) {
-            throw e;
+    public void addSong(Song song) throws SongAlreadyExistsException {
+        if (!playlist.contains(song)) {
+            playlist.add(song);
+        } else {
+            throw new SongAlreadyExistsException();
         }
     }
 
