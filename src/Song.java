@@ -1,7 +1,6 @@
 /**
  * This class symbolise one song. it has name, artist, genre and duration
  */
-// HOW TO MAKE THE DURETION INTO MM:SS??
 public class Song implements Cloneable {
     private String name;
     private String artist;
@@ -96,8 +95,8 @@ public class Song implements Cloneable {
         } else return getName().equals(otherSong.getName()) && getArtist().equals(otherSong.getArtist());
     }
 
-    public void setDuration(int i) {
-        duration = i;
+    public void setDuration(int duration) {
+        this.duration = duration;
     }
 
     /**

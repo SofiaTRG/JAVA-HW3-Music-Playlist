@@ -188,7 +188,7 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
             }
         }
 
-        return "[" + playlistString.toString() + "]";
+        return "[" + playlistString + "]";
     }
 
 
