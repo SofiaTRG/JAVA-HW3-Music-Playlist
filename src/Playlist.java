@@ -2,7 +2,7 @@ import java.util.*;
 
 
 public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterable, OrderedSongIterable{
-    private static ArrayList<Song> playlist;
+    private ArrayList<Song> playlist;
 
     public Playlist(Song... songs) {
         playlist = new ArrayList<>(songs.length);
@@ -154,23 +154,23 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         }
         Playlist otherPlaylist = (Playlist) other;
 
-//        if (playlist.size() != otherPlaylist.playlist.size()) {
-//            return false;
-//        }
+        if (playlist.size() != otherPlaylist.playlist.size()) {
+            return false;
+        }
 
-        Iterator<Song> thisIterator = playlist.iterator();
-        Iterator<Song> otherIterator = otherPlaylist.playlist.iterator();
-
-        while (thisIterator.hasNext()) {
-            Song thisSong = thisIterator.next();
-            Song otherSong = otherIterator.next();
-            if (!thisSong.equals(otherSong)) {
+        for (int i = 0; i < playlist.size(); i++) {
+            if (!playlist.get(i).equals(otherPlaylist.playlist.get(i))) {
                 return false;
             }
         }
 
         return true;
     }
+
+
+
+
+
 
     @Override
     public String toString() {
@@ -192,7 +192,7 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
     }
 
 
-    private static class PlaylistIterator implements Iterator<Song> {
+    private class PlaylistIterator implements Iterator<Song> {
         private int currentIndex;
 
         public PlaylistIterator() {
