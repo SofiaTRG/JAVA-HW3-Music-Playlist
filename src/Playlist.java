@@ -155,22 +155,20 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         Playlist otherPlaylist = (Playlist) other;
 
         if (playlist.size() != otherPlaylist.playlist.size()) {
+            //System.out.println("it's not the same length");
             return false;
         }
 
-        for (int i = 0; i < playlist.size(); i++) {
-            if (!playlist.get(i).equals(otherPlaylist.playlist.get(i))) {
-                return false;
+        int i = 0;
+        for (Song song : playlist) {
+            for (Song otherSong : otherPlaylist.playlist) {
+                if (song.equals(otherSong)) {
+                    i += 1;
+                }
             }
         }
-
-        return true;
+        return i == playlist.size();
     }
-
-
-
-
-
 
     @Override
     public String toString() {

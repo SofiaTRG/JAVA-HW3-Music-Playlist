@@ -85,15 +85,23 @@ public class Song implements Cloneable {
 
     /**
      * checks if two songs has same name and artist
-     * @param otherSong the second song
+     * @param obj the second song
      * @return false if the song are different or the second song is null,
      * true if they share same name and artist
      */
-    public boolean equals(Song otherSong) {
-        if (otherSong == null) {
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
             return false;
-        } else return getName().equals(otherSong.getName()) && getArtist().equals(otherSong.getArtist());
+        }
+        Song otherSong = (Song) obj;
+
+        return name.equals(otherSong.name) && artist.equals(otherSong.artist);
     }
+
 
     public void setDuration(int duration) {
         this.duration = duration;
