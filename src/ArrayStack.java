@@ -1,6 +1,5 @@
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.EmptyStackException;
 import java.util.Iterator;
 
 public class ArrayStack<E extends Cloneable> implements Stack<E>, Iterable<E> {
@@ -11,7 +10,7 @@ public class ArrayStack<E extends Cloneable> implements Stack<E>, Iterable<E> {
     public ArrayStack(int maxSize) throws StackException {
         if (maxSize >= 0) {
             this.maxSize = maxSize;
-            this.elements = new Cloneable[maxSize];
+            this.elements = (E[]) new Cloneable[maxSize];
             this.head = 0;
         } else throw new NegativeCapacityException();
     }
@@ -43,13 +42,13 @@ public class ArrayStack<E extends Cloneable> implements Stack<E>, Iterable<E> {
 
     @Override
     public E peek() {
-        if (this.head == 0) {
+        if (isEmpty()) {
             throw new EmptyStackException();
         } else {
-            return (E) this.elements[head-1];
+            return (E) this.elements[this.head - 1];
         }
-
     }
+
 
     @Override
     public int size() {
@@ -81,29 +80,23 @@ public class ArrayStack<E extends Cloneable> implements Stack<E>, Iterable<E> {
                      NoSuchMethodException | SecurityException exception) {
                 return null;
             }
-            return copy;
         }
+        return copy;
     }
 
     private class StackIterator implements Iterator<E> {
-        private int I;
-
-        public StackIterator() {
-            this.I = head - 1;
-        }
+        private int curr = head-1;
 
         @Override
         public boolean hasNext() {
-            return (I >= 0);
+            return (curr >= 0);
         }
 
         @Override
         public E next() {
-            return (E) elements[I--];
+            return (E) elements[curr--];
         }
     }
-
-
 
 
     @Override
