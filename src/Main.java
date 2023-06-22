@@ -38,7 +38,7 @@ class MyCloneable implements Cloneable {
 public class Main {
     public static void main(String[] args) {
         testPartA();
-//        testPartB();
+        testPartB();
     }
 
     /**
@@ -150,129 +150,129 @@ public class Main {
     /**
      * Tests for part B.
      */
-//    private static void testPartB() {
-//        Playlist playlist1 = new Playlist();
-//        for (Song s : playlist1) {
-//            System.out.println("You should not reach here!");
-//        }
-//
-//        Song song1 = new Song("Unicorn", "Noa Kirel", Song.Genre.POP, 171);
-//        Song song2 = new Song("Born In The U.S.A.", "Bruce Springsteen", Song.Genre.ROCK, 278);
-//        Song song3 = new Song("Take Five", "Dave Brubeck", Song.Genre.JAZZ, 175);
-//        Song song4 = new Song("Easter Egg", "Dvir ft. Gal", Song.Genre.HIP_HOP, 230);
-//
-//        playlist1.addSong(song1);
-//        playlist1.addSong(song4);
-//        playlist1.addSong(song3);
-//        playlist1.addSong(song2);
-//
-//        System.out.println("playlist1: " + playlist1);
-//
-//        Playlist playlist2 = playlist1.clone();
-//        System.out.println("playlist1: " + playlist1);
-//        System.out.println("playlist2: " + playlist2);
-//
-//        System.out.println("Is playlist1 == playlist2? " + (playlist1 == playlist2));
-//        System.out.println("Is playlist1 equal to playlist2? " + playlist1.equals(playlist2));
-//        System.out.println("Is playlist2 equal to playlist1? " + playlist2.equals(playlist1));
-//        System.out.println("Is playlist1 equal to null? " + playlist1.equals(null));
-//
-//        song4.setDuration(437);
-//
-//        System.out.println("playlist1: " + playlist1);
-//        System.out.println("playlist2: " + playlist2);
-//
-//        System.out.println();
-//
-//        System.out.println("Is playlist1 equal to playlist2? " + playlist1.equals(playlist2));
-//        System.out.println("Is playlist2 equal to playlist1? " + playlist2.equals(playlist1));
-//
-//
-//        try {
-//            playlist1.addSong(new Song("Unicorn", "Noa Kirel", Song.Genre.POP, 180));
-//        } catch (SongAlreadyExistsException e) {
-//            System.out.println("Cannot add the song!");
-//        }
-//        try {
-//            playlist1.addSong(new Song("Born In The U.S.A.", "Bruce Springsteen", Song.Genre.ROCK, 278));
-//        } catch (SongAlreadyExistsException e) {
-//            System.out.println("Cannot add the song!");
-//        }
-//        Song clonedSong1 = song1.clone();
-//        try {
-//            playlist1.addSong(clonedSong1);
-//        } catch (SongAlreadyExistsException e) {
-//            System.out.println("Cannot add the song!");
-//        }
-//
-//        System.out.println("song1: " + song1);
-//        System.out.println("clonedSong1: " + clonedSong1);
-//        System.out.println("Is song1 equal to clonedSong1? " + song1.equals(clonedSong1));
-//        System.out.println("Is clonedSong1 equal to song1? " + clonedSong1.equals(song1));
-//        System.out.println("Is song1 == clonedSong1? " + (song1 == clonedSong1));
-//        System.out.println("Is song1.equals(null)? " + song1.equals(null));
-//        System.out.println();
-//
-//        Playlist playlist3 = new Playlist();
-//
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//        playlist3.addSong(song2);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        playlist3.addSong(song4);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        playlist3.addSong(song1);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        playlist3.addSong(song3);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        boolean result = playlist3.removeSong(song3);
-//        System.out.println("Remove result: " + result);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        playlist3.addSong(song3);
-//        System.out.println("playlist3: " + playlist3);
-//        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
-//
-//        System.out.println();
-//        Set<Playlist> set = new HashSet<>();
-//        set.add(playlist1);
-//        set.add(playlist3);
-//        System.out.println("Number of playlists in set: " + set.size());
-//
-//        Song[] songs = {
-//                new Song("I Walk the Line", "Johnny Cash", Song.Genre.COUNTRY, 166),
-//                new Song("Shape of You", "Ed Sheeran", Song.Genre.POP, 234),
-//                new Song("Y.M.C.A.", "Village People", Song.Genre.DISCO, 199),
-//                new Song("Dancing Queen", "ABBA", Song.Genre.DISCO, 231),
-//                new Song("Le Freak", "Chic", Song.Genre.DISCO, 307),
-//                new Song("Counting Stars", "OneRepublic", Song.Genre.POP, 257),
-//                new Song("Shape of My Heart", "Backstreet Boys", Song.Genre.POP, 230),
-//                new Song("Another Easter Egg", "Ahmed Jabara", Song.Genre.ROCK, 227),
-//                new Song("Mamma Mia", "ABBA", Song.Genre.POP, 213),
-//                new Song("Waterloo", "ABBA", Song.Genre.POP, 162),
-//                new Song("Take a Chance on Me", "ABBA", Song.Genre.POP, 260),
-//        };
-//
-//        for (Song song : songs) {
-//            playlist1.addSong(song);
-//        }
-//
-//        String[] artists = {"ABBA", null, "Backstreet Boys"};
-//        int[] durations = {-10, 0, 200, 900};
-//
-//        checkScans(playlist1, artists, durations);
-//        checkScans(playlist3, artists, durations);
-//
-//        System.out.println("\nTesting of part B is over!");
-//    }
+    private static void testPartB() {
+        Playlist playlist1 = new Playlist();
+        for (Song s : playlist1) {
+            System.out.println("You should not reach here!");
+        }
+
+        Song song1 = new Song("Unicorn", "Noa Kirel", Song.Genre.POP, 171);
+        Song song2 = new Song("Born In The U.S.A.", "Bruce Springsteen", Song.Genre.ROCK, 278);
+        Song song3 = new Song("Take Five", "Dave Brubeck", Song.Genre.JAZZ, 175);
+        Song song4 = new Song("Easter Egg", "Dvir ft. Gal", Song.Genre.HIP_HOP, 230);
+
+        playlist1.addSong(song1);
+        playlist1.addSong(song4);
+        playlist1.addSong(song3);
+        playlist1.addSong(song2);
+
+        System.out.println("playlist1: " + playlist1);
+
+        Playlist playlist2 = playlist1.clone();
+        System.out.println("playlist1: " + playlist1);
+        System.out.println("playlist2: " + playlist2);
+
+        System.out.println("Is playlist1 == playlist2? " + (playlist1 == playlist2));
+        System.out.println("Is playlist1 equal to playlist2? " + playlist1.equals(playlist2));
+        System.out.println("Is playlist2 equal to playlist1? " + playlist2.equals(playlist1));
+        System.out.println("Is playlist1 equal to null? " + playlist1.equals(null));
+
+        song4.setDuration(437);
+
+        System.out.println("playlist1: " + playlist1);
+        System.out.println("playlist2: " + playlist2);
+
+        System.out.println();
+
+        System.out.println("Is playlist1 equal to playlist2? " + playlist1.equals(playlist2));
+        System.out.println("Is playlist2 equal to playlist1? " + playlist2.equals(playlist1));
+
+
+        try {
+            playlist1.addSong(new Song("Unicorn", "Noa Kirel", Song.Genre.POP, 180));
+        } catch (SongAlreadyExistsException e) {
+            System.out.println("Cannot add the song!");
+        }
+        try {
+            playlist1.addSong(new Song("Born In The U.S.A.", "Bruce Springsteen", Song.Genre.ROCK, 278));
+        } catch (SongAlreadyExistsException e) {
+            System.out.println("Cannot add the song!");
+        }
+        Song clonedSong1 = song1.clone();
+        try {
+            playlist1.addSong(clonedSong1);
+        } catch (SongAlreadyExistsException e) {
+            System.out.println("Cannot add the song!");
+        }
+
+        System.out.println("song1: " + song1);
+        System.out.println("clonedSong1: " + clonedSong1);
+        System.out.println("Is song1 equal to clonedSong1? " + song1.equals(clonedSong1));
+        System.out.println("Is clonedSong1 equal to song1? " + clonedSong1.equals(song1));
+        System.out.println("Is song1 == clonedSong1? " + (song1 == clonedSong1));
+        System.out.println("Is song1.equals(null)? " + song1.equals(null));
+        System.out.println();
+
+        Playlist playlist3 = new Playlist();
+
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+        playlist3.addSong(song2);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        playlist3.addSong(song4);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        playlist3.addSong(song1);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        playlist3.addSong(song3);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        boolean result = playlist3.removeSong(song3);
+        System.out.println("Remove result: " + result);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        playlist3.addSong(song3);
+        System.out.println("playlist3: " + playlist3);
+        System.out.println("Is playlist1 equal to playlist3? " + playlist1.equals(playlist3));
+
+        System.out.println();
+        Set<Playlist> set = new HashSet<>();
+        set.add(playlist1);
+        set.add(playlist3);
+        System.out.println("Number of playlists in set: " + set.size());
+
+        Song[] songs = {
+                new Song("I Walk the Line", "Johnny Cash", Song.Genre.COUNTRY, 166),
+                new Song("Shape of You", "Ed Sheeran", Song.Genre.POP, 234),
+                new Song("Y.M.C.A.", "Village People", Song.Genre.DISCO, 199),
+                new Song("Dancing Queen", "ABBA", Song.Genre.DISCO, 231),
+                new Song("Le Freak", "Chic", Song.Genre.DISCO, 307),
+                new Song("Counting Stars", "OneRepublic", Song.Genre.POP, 257),
+                new Song("Shape of My Heart", "Backstreet Boys", Song.Genre.POP, 230),
+                new Song("Another Easter Egg", "Ahmed Jabara", Song.Genre.ROCK, 227),
+                new Song("Mamma Mia", "ABBA", Song.Genre.POP, 213),
+                new Song("Waterloo", "ABBA", Song.Genre.POP, 162),
+                new Song("Take a Chance on Me", "ABBA", Song.Genre.POP, 260),
+        };
+
+        for (Song song : songs) {
+            playlist1.addSong(song);
+        }
+
+        String[] artists = {"ABBA", null, "Backstreet Boys"};
+        int[] durations = {-10, 0, 200, 900};
+
+        checkScans(playlist1, artists, durations);
+        checkScans(playlist3, artists, durations);
+
+        System.out.println("\nTesting of part B is over!");
+    }
 
     /**
      * Checks numerous scans for a given playlist.

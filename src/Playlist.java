@@ -2,29 +2,24 @@ import java.util.*;
 
 public class Playlist implements Cloneable, Iterable<Song>, FilteredSongIterable, OrderedSongIterable {
     private ArrayList<Song> playlist;
-    private ArrayList<Song> originalPlaylist;
+    private final ArrayList<Song> copyPlaylist;
 
-    public Playlist(Song... songs) {
-        playlist = new ArrayList<>(songs.length);
-        playlist.addAll(Arrays.asList(songs));
+    public Playlist() {
+        this.playlist = new ArrayList<>();
+        this.copyPlaylist = new ArrayList<>();
     }
 
     public void addSong(Song song) throws SongAlreadyExistsException {
-//        if (!playlist.contains(song)) {
-//            playlist.add(song);
-//        } else {
-//            throw new SongAlreadyExistsException();
-//        }
-//    }
-        if ( playlist.size() == 0 ) {
+        if (playlist.size() == 0) {
             playlist.add(song);
+            copyPlaylist.add(song);
             return;
         }
-        for ( Song currentSong : playlist ){
-            if ( currentSong.equals(song) )
+        for (Song currentSong : playlist) {
+            if (currentSong.equals(song))
                 throw new SongAlreadyExistsException();
         }
-        playlist.add( song );
+        playlist.add(song);
     }
 
     @Override
@@ -42,6 +37,7 @@ public class Playlist implements Cloneable, Iterable<Song>, FilteredSongIterable
     }
 
     public boolean removeSong(Song song) {
+        copyPlaylist.remove(song);
         return playlist.remove(song);
     }
 
@@ -51,66 +47,63 @@ public class Playlist implements Cloneable, Iterable<Song>, FilteredSongIterable
     }
 
     @Override
-    public Playlist filterArtist(String artist) {
-        Playlist filteredPlaylist = new Playlist();
-        for (Song song : playlist) {
-            if (song.getArtist().equals(artist)) {
-                filteredPlaylist.addSong(song);
+    public void filterArtist(String artist) {
+        if (artist != null) {
+            Iterator<Song> iterator = playlist.iterator();
+            while (iterator.hasNext()) {
+                Song song = iterator.next();
+                if (!song.getArtist().equals(artist))
+                    iterator.remove();
             }
         }
-        return filteredPlaylist;
     }
 
     @Override
-    public Playlist filterDuration(int duration) {
-        Playlist filteredPlaylist = new Playlist();
-        for (Song song : playlist) {
-            if (song.getDuration() <= duration) {
-                filteredPlaylist.addSong(song);
-            }
+    public void filterDuration(int duration) {
+        Iterator<Song> iterator = playlist.iterator();
+        while (iterator.hasNext()) {
+            Song song = iterator.next();
+            if (song.getDuration() > duration)
+                iterator.remove();
         }
-        return filteredPlaylist;
     }
 
     @Override
-    public Playlist filterGenre(Song.Genre genre) {
-        Playlist filteredPlaylist = new Playlist();
-        for (Song song : playlist) {
-            if (song.getGenre() == genre) {
-                filteredPlaylist.addSong(song);
+    public void filterGenre(Song.Genre genre) {
+        if (genre != null) {
+            Iterator<Song> iterator = playlist.iterator();
+            while (iterator.hasNext()) {
+                Song song = iterator.next();
+                if (song.getGenre() != genre)
+                    iterator.remove();
             }
         }
-        return filteredPlaylist;
     }
 
     @Override
-    public Playlist setScanningOrder(ScanningOrder order) {
-        Playlist filteredPlaylist = this.clone();
-        switch (order) {
+    public void setScanningOrder(ScanningOrder sc) {
+        switch (sc) {
             case ADDING:
+                playlist = copyPlaylist;
                 break;
             case NAME:
-                Playlist filteredPlaylist = this.clone();
-                filteredPlaylist.playlist.sort(Comparator.comparing(Song::getName));
+                playlist.sort(Comparator.comparing(Song::getName));
                 break;
             case DURATION:
-                Playlist filteredPlaylist = this.clone();
-                filteredPlaylist.playlist.sort(Comparator.comparing(Song::getDuration).reversed());
+                playlist.sort(Comparator.comparing(Song::getDuration));
                 break;
         }
-
-        return filteredPlaylist;
     }
 
 
     @Override
     public int hashCode() {
         int result = 0;
-        for ( Song song : this ){
+        for (Song song : this) {
             result += song.hashCode();
         }
         return result;
-}
+    }
 
     @Override
     public boolean equals(Object other) {
