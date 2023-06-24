@@ -3,7 +3,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 
 /**
- * Represents a playlist that holds a collection of songs.
+ * Represents a playlist that made out of songs, has two arraylist one for the playlist and the second one
+ * is a copy of the playlist that is used for filter methods.
  */
 public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable, OrderedSongIterable {
     private ArrayList<Song> playlist;
@@ -18,17 +19,18 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Adds a song to the playlist.
-     *
-     * @param newSong the song to be added
-     * @throws SongAlreadyExistsException if the song already exists in the playlist
+     * adds a song to the playlist.
+     * @param newSong a song we want to add
+     * @throws SongAlreadyExistsException if the song already in our playlist
      */
     public void addSong(Song newSong) {
+        /** if the playlist size is 0 add the song automatically */
         if (playlist.size() == 0) {
             playlist.add(newSong);
             filteredSongs.add(newSong);
             return;
         }
+        /** check the playlist if the song is already there */
         for (Song song : playlist) {
             if (song.equals(newSong))
                 throw new SongAlreadyExistsException();
@@ -38,37 +40,37 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Removes a song from the playlist.
-     *
-     * @param removedSong the song to be removed
+     * removes a song from the playlist.
+     * @param removedSong the song we want to remove
      * @return true if the song was found and removed, false otherwise
      */
     public boolean removeSong(Song removedSong) {
-        boolean isHere = false;
+        boolean i = false;
         for (Song song : playlist) {
             if (song.equals(removedSong)) {
-                isHere = true;
+                i = true;
                 break;
             }
         }
-        if (isHere) {
+        if (i) {
             playlist.remove(removedSong);
             filteredSongs.remove(removedSong);
         }
-        return isHere;
+        return i;
     }
 
     /**
-     * Creates a shallow copy of the playlist.
-     *
-     * @return a new Playlist object that is a shallow copy of this playlist
+     * makes a deep copy of the playlist
+     * @return deep copy of the playlist
      */
     @Override
     public Playlist clone() {
         try {
+            /** make a shallow copy */
             Playlist copy = (Playlist) super.clone();
             copy.playlist = (ArrayList<Song>) this.playlist.clone();
             copy.filteredSongs = new ArrayList<>();
+            /** set each song in the copy as a deep copy of the original song */
             for (int i = 0; i < copy.playlist.size(); i++) {
                 copy.playlist.set(i, copy.playlist.get(i).clone());
             }
@@ -79,7 +81,10 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
 
-
+    /**
+     * override of hashcode
+     * @return hashcode
+     */
     @Override
     public int hashCode() {
         int result = 0;
@@ -89,6 +94,11 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
         return result;
     }
 
+    /**
+     * checks if two playlist are equal by calling the equal method in song
+     * @param other the other playlist
+     * @return true if the both playlists are equals, false otherwise
+     */
     @Override
     public boolean equals(Object other) {
         if (this == other) {
@@ -97,6 +107,7 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
         if (other == null || getClass() != other.getClass()) {
             return false;
         }
+        /** if the sizes are different they don't have the same songs */
         Playlist otherPlaylist = (Playlist) other;
         if (playlist.size() != otherPlaylist.playlist.size()) {
             return false;
@@ -114,9 +125,8 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Returns a string representation of the playlist.
-     *
-     * @return a string representation of the playlist
+     * makes a string of the playlist.
+     * @return a string of the playlist
      */
     @Override
     public String toString() {
@@ -136,9 +146,8 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
 
 
     /**
-     * Filters the playlist by the artist name.
-     *
-     * @param artist the artist name to filter by
+     * filters the playlist by the artist name
+     * @param artist the artist name to filter the songs
      */
     @Override
     public void filterArtist(String artist) {
@@ -151,9 +160,8 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Filters the playlist by the song duration.
-     *
-     * @param duration the duration to filter by
+     * filters the playlist by the song duration
+     * @param duration the duration to filter the songs
      */
     @Override
     public void filterDuration(int duration) {
@@ -165,9 +173,8 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Filters the playlist by the song genre.
-     *
-     * @param genre the genre to filter by
+     * filters the playlist by the song genre
+     * @param genre the genre to filter the songs
      */
     @Override
     public void filterGenre(Song.Genre genre) {
@@ -181,13 +188,12 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Sets the scanning order of the playlist.
-     *
-     * @param sc the scanning order
+     * makes the scanning order of the playlist
+     * @param order the scanning order
      */
     @Override
-    public void setScanningOrder(ScanningOrder sc) {
-        switch (sc) {
+    public void setScanningOrder(ScanningOrder order) {
+        switch (order) {
             case ADDING:
                 break;
             case NAME:
@@ -200,30 +206,28 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     }
 
     /**
-     * Returns an iterator over the songs in the playlist.
-     *
-     * @return an iterator over the songs in the playlist
+     * makes an iterator over the songs in the playlist
+     * @return an iterator over the playlist
      */
     public Iterator<Song> iterator() {
         return new PlaylistIterator<Song>();
     }
 
+    /**
+     * an inner class for playlist iterator
+     * @param <Song>
+     */
     class PlaylistIterator<Song> implements Iterator<Song> {
-        /**
-         * Represents an iterator for the playlist.
-         */
+        /** Represents an iterator for the playlist */
         private int index;
 
-        /**
-         * Constructs a PlaylistIterator object.
-         */
+        /** Constructor */
         public PlaylistIterator() {
             this.index = 0;
         }
 
         /**
-         * Checks if there is a next song in the playlist.
-         *
+         * checks if there is a next song in the playlist
          * @return true if there is a next song, false otherwise
          */
         @Override
@@ -236,8 +240,7 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
         }
 
         /**
-         * Returns the next song in the playlist.
-         *
+         * returns the next song in the playlist
          * @return the next song in the playlist
          */
         @Override

@@ -70,12 +70,12 @@ public class Song implements Cloneable {
 
     /**
      * override of hashcode so we can use the equals
-     * @return
+     * @return hashcode
      */
-    // NEED TO OVERRIDE
     @Override
     public int hashCode() {
-        int result = 17;  // Choose an arbitrary prime number as the initial value
+        /** choose prime number as the initial value */
+        int result = 17;
         result = 31 * result + name.hashCode();
         result = 31 * result + artist.hashCode();
         result = 31 * result + genre.hashCode();
@@ -103,6 +103,10 @@ public class Song implements Cloneable {
     }
 
 
+    /**
+     * set a new duration for a song
+     * @param duration duration of the song
+     */
     public void setDuration(int duration) {
         this.duration = duration;
     }
