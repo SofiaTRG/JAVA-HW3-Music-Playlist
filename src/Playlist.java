@@ -67,11 +67,10 @@ public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable
     public Playlist clone() {
         try {
             Playlist copy = (Playlist) super.clone();
-            copy.playlist = new ArrayList<>();
+            copy.playlist = (ArrayList<Song>) this.playlist.clone();
             copy.filteredSongs = new ArrayList<>();
-            for (Song song : this.playlist) {
-                copy.playlist.add(song.clone());
-                copy.filteredSongs.add(song.clone());
+            for (int i = 0; i < copy.playlist.size(); i++) {
+                copy.playlist.set(i, copy.playlist.get(i).clone());
             }
             return copy;
         } catch (CloneNotSupportedException e) {
