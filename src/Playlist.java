@@ -1,5 +1,3 @@
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -7,36 +5,38 @@ import java.util.Iterator;
 /**
  * Represents a playlist that holds a collection of songs.
  */
-public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,OrderedSongIterable {
-    private ArrayList<Song> songs;
+public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable, OrderedSongIterable {
+    private ArrayList<Song> playlist;
     private ArrayList<Song> filteredSongs;
 
     /**
      * Constructs an empty playlist.
      */
     public Playlist() {
-        this.songs = new ArrayList<Song>();
-        this.filteredSongs = new ArrayList<Song>();
+        this.playlist = new ArrayList<>();
+        this.filteredSongs = new ArrayList<>();
     }
+
     /**
      * Adds a song to the playlist.
      *
      * @param newSong the song to be added
      * @throws SongAlreadyExistsException if the song already exists in the playlist
      */
-    public void addSong(Song newSong){
-        if ( songs.size() == 0 ) {
-            songs.add(newSong);
+    public void addSong(Song newSong) {
+        if (playlist.size() == 0) {
+            playlist.add(newSong);
             filteredSongs.add(newSong);
             return;
         }
-        for ( Song song : songs ){
-            if ( song.equals(newSong) )
+        for (Song song : playlist) {
+            if (song.equals(newSong))
                 throw new SongAlreadyExistsException();
         }
-        songs.add( newSong );
-        filteredSongs.add( newSong );
+        playlist.add(newSong);
+        filteredSongs.add(newSong);
     }
+
     /**
      * Removes a song from the playlist.
      *
@@ -45,15 +45,15 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
      */
     public boolean removeSong(Song removedSong) {
         boolean isHere = false;
-        for ( Song song : songs ){
-            if ( song.equals(removedSong) ){
+        for (Song song : playlist) {
+            if (song.equals(removedSong)) {
                 isHere = true;
                 break;
             }
         }
-        if ( isHere ){
-            songs.remove( (Song) removedSong );
-            filteredSongs.remove( (Song) removedSong );
+        if (isHere) {
+            playlist.remove(removedSong);
+            filteredSongs.remove(removedSong);
         }
         return isHere;
     }
@@ -65,17 +65,21 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
      */
     @Override
     public Playlist clone() {
-        Playlist copy = new Playlist();
-        for ( Song song : this.songs ){
-            try {
-                copy.songs.add( song.clone() );
-                copy.filteredSongs.add( song.clone() );
-            } catch (Exception e) {
-                return null;
+        try {
+            Playlist copy = (Playlist) super.clone();
+            copy.playlist = new ArrayList<>();
+            copy.filteredSongs = new ArrayList<>();
+            for (Song song : this.playlist) {
+                copy.playlist.add(song.clone());
+                copy.filteredSongs.add(song.clone());
             }
+            return copy;
+        } catch (CloneNotSupportedException e) {
+            return null;
         }
-        return copy;
     }
+
+
 
     @Override
     public int hashCode() {
@@ -95,20 +99,21 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
             return false;
         }
         Playlist otherPlaylist = (Playlist) other;
-        if (songs.size() != otherPlaylist.songs.size()) {
+        if (playlist.size() != otherPlaylist.playlist.size()) {
             return false;
         }
 
         int i = 0;
-        for (Song song : songs) {
-            for (Song otherSong : otherPlaylist.songs) {
+        for (Song song : playlist) {
+            for (Song otherSong : otherPlaylist.playlist) {
                 if (song.equals(otherSong)) {
                     i += 1;
                 }
             }
         }
-        return i == songs.size();
+        return i == playlist.size();
     }
+
     /**
      * Returns a string representation of the playlist.
      *
@@ -116,31 +121,21 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
      */
     @Override
     public String toString() {
-        int counter =1;
-        String result = "[";
-        for ( Song song : songs ){
-            result += "(" + song.toString() + ")";
-            if(counter!=songs.size()){
-                result+=", ";
+        StringBuilder builder = new StringBuilder();
+        int counter = 1;
+        builder.append("[");
+        for (Song song : playlist) {
+            builder.append("(").append(song.toString()).append(")");
+            if (counter != playlist.size()) {
+                builder.append(", ");
             }
             counter++;
         }
-        result += "]";
-        return result;
+        builder.append("]");
+        return builder.toString();
     }
-    /**
-     * Returns a string representation of the filtered songs in the playlist.
-     *
-     * @return a string representation of the filtered songs
-     */
-    public String STRfiltered() {
-        String result = "[";
-        for ( Song song : filteredSongs ){
-            result += "(" + song.toString() + "), ";
-        }
-        result += "]";
-        return result;
-    }
+
+
     /**
      * Filters the playlist by the artist name.
      *
@@ -148,26 +143,28 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
      */
     @Override
     public void filterArtist(String artist) {
-        if ( artist != null ) {
-            for (Song song : songs) {
-                if ( ! song.getArtist().equals(artist) )
+        if (artist != null) {
+            for (Song song : playlist) {
+                if (!song.getArtist().equals(artist))
                     filteredSongs.remove(song);
             }
         }
     }
+
     /**
      * Filters the playlist by the song duration.
      *
-     * @param
+     * @param duration the duration to filter by
      */
     @Override
     public void filterDuration(int duration) {
-        for (Song song : songs) {
+        for (Song song : playlist) {
             if (song.getDuration() > duration) {
                 filteredSongs.remove(song);
             }
         }
     }
+
     /**
      * Filters the playlist by the song genre.
      *
@@ -175,22 +172,23 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
      */
     @Override
     public void filterGenre(Song.Genre genre) {
-        if ( genre != null ) {
-            for (Song song : songs) {
+        if (genre != null) {
+            for (Song song : playlist) {
                 if (song.getGenre() != genre) {
                     filteredSongs.remove(song);
                 }
             }
         }
     }
+
     /**
      * Sets the scanning order of the playlist.
      *
      * @param sc the scanning order
      */
     @Override
-    public void setScanningOrder( ScanningOrder sc ) {
-        switch ( sc ){
+    public void setScanningOrder(ScanningOrder sc) {
+        switch (sc) {
             case ADDING:
                 break;
             case NAME:
@@ -201,6 +199,7 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
                 break;
         }
     }
+
     /**
      * Returns an iterator over the songs in the playlist.
      *
@@ -209,17 +208,20 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
     public Iterator<Song> iterator() {
         return new PlaylistIterator<Song>();
     }
+
     class PlaylistIterator<Song> implements Iterator<Song> {
         /**
          * Represents an iterator for the playlist.
          */
         private int index;
+
         /**
          * Constructs a PlaylistIterator object.
          */
         public PlaylistIterator() {
             this.index = 0;
         }
+
         /**
          * Checks if there is a next song in the playlist.
          *
@@ -227,14 +229,13 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
          */
         @Override
         public boolean hasNext() {
-            //System.out.println(" ENTERED HASNEXT---------------------");
-            if ( index >= filteredSongs.size() ){
-                //System.out.println("RESSTING filtered....");
-                filteredSongs = new ArrayList<>(songs);
+            if (index >= filteredSongs.size()) {
+                filteredSongs = new ArrayList<>(playlist);
                 return false;
             }
             return true;
         }
+
         /**
          * Returns the next song in the playlist.
          *
@@ -242,10 +243,9 @@ public class Playlist implements Iterable<Song>,Cloneable,FilteredSongIterable,O
          */
         @Override
         public Song next() {
-            //System.out.println(" ENTERED NEXT---------------------");
-            Song val = (Song) filteredSongs.get( index );
+            Song value = (Song) filteredSongs.get(index);
             index += 1;
-            return val;
+            return value;
         }
     }
 }
