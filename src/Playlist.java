@@ -1,36 +1,76 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Iterator;
 
-
-public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterable, OrderedSongIterable{
+/**
+ * Represents a playlist that made out of songs, has two arraylist one for the playlist and the second one
+ * is a copy of the playlist that is used for filter methods.
+ */
+public class Playlist implements Iterable<Song>, Cloneable, FilteredSongIterable, OrderedSongIterable {
     private ArrayList<Song> playlist;
-
-    public Playlist(Song... songs) {
-        playlist = new ArrayList<>(songs.length);
-        playlist.addAll(Arrays.asList(songs));
-    }
+    private ArrayList<Song> filteredSongs;
 
     /**
-     * 
-     * @param song
+     * Constructs an empty playlist.
      */
-    public void addSong(Song song) throws SongAlreadyExistsException {
-        if (!playlist.contains(song)) {
-            playlist.add(song);
-        } else {
-            throw new SongAlreadyExistsException();
-        }
+    public Playlist() {
+        this.playlist = new ArrayList<>();
+        this.filteredSongs = new ArrayList<>();
     }
 
     /**
-     * A deep clone of playlist. makes a new empty playlist in the size of the previous one and puting a clone
-     * of each song from the previous playlist to the new one.
-     * @return deep copy of previous playlist
+     * adds a song to the playlist.
+     * @param newSong a song we want to add
+     * @throws SongAlreadyExistsException if the song already in our playlist
+     */
+    public void addSong(Song newSong) {
+        /** if the playlist size is 0 add the song automatically */
+        if (playlist.size() == 0) {
+            playlist.add(newSong);
+            filteredSongs.add(newSong);
+            return;
+        }
+        /** check the playlist if the song is already there */
+        for (Song song : playlist) {
+            if (song.equals(newSong))
+                throw new SongAlreadyExistsException();
+        }
+        playlist.add(newSong);
+        filteredSongs.add(newSong);
+    }
+
+    /**
+     * removes a song from the playlist.
+     * @param removedSong the song we want to remove
+     * @return true if the song was found and removed, false otherwise
+     */
+    public boolean removeSong(Song removedSong) {
+        boolean i = false;
+        for (Song song : playlist) {
+            if (song.equals(removedSong)) {
+                i = true;
+                break;
+            }
+        }
+        if (i) {
+            playlist.remove(removedSong);
+            filteredSongs.remove(removedSong);
+        }
+        return i;
+    }
+
+    /**
+     * makes a deep copy of the playlist
+     * @return deep copy of the playlist
      */
     @Override
     public Playlist clone() {
         try {
+            /** make a shallow copy */
             Playlist copy = (Playlist) super.clone();
-            copy.playlist = new ArrayList<>(this.playlist);
+            copy.playlist = (ArrayList<Song>) this.playlist.clone();
+            copy.filteredSongs = new ArrayList<>();
+            /** set each song in the copy as a deep copy of the original song */
             for (int i = 0; i < copy.playlist.size(); i++) {
                 copy.playlist.set(i, copy.playlist.get(i).clone());
             }
@@ -42,108 +82,23 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
 
 
     /**
-     * removes a song from a playlist
-     * @param song the song we want to remove
-     * @return true if the playlist contained the song before the remove, false otherwise
+     * override of hashcode
+     * @return hashcode
      */
-    public boolean removeSong(Song song) {
-        return playlist.remove(song);
-    }
-
-
-    @Override
-    public Iterator<Song> iterator() {
-        return new PlaylistIterator();
-    }
-
-    @Override
-    public Playlist filterArtist(String artist) {
-        if (artist == null) {
-            return this;
-        }
-        ArrayList<Song> filteredList = new ArrayList<>();
-        Iterator<Song> iterator = playlist.iterator();
-        while (iterator.hasNext()) {
-            Song song = iterator.next();
-            if (song.getArtist().equals(artist)) {
-                filteredList.add(song);
-                iterator.remove();
-            }
-        }
-        Playlist filteredPlaylist = new Playlist();
-        filteredPlaylist.playlist = filteredList;
-        return filteredPlaylist;
-    }
-
-    @Override
-    public Playlist filterDuration(int duration) {
-        ArrayList<Song> filteredList = new ArrayList<>();
-        Iterator<Song> iterator = playlist.iterator();
-        while (iterator.hasNext()) {
-            Song song = iterator.next();
-            if (song.getDuration() <= duration) {
-                filteredList.add(song);
-                iterator.remove();
-            }
-        }
-        filteredList.sort(Comparator.comparing(Song::getDuration).reversed()); // Sort by duration in descending order
-        Playlist filteredPlaylist = new Playlist();
-        filteredPlaylist.playlist = filteredList;
-        return filteredPlaylist;
-    }
-
-    @Override
-    public Playlist filterGenre(Song.Genre genre) {
-        if (genre == null) {
-            return this;
-        }
-        ArrayList<Song> filteredList = new ArrayList<>();
-        Iterator<Song> iterator = playlist.iterator();
-        while (iterator.hasNext()) {
-            Song song = iterator.next();
-            if (song.getGenre() == genre) {
-                filteredList.add(song);
-                iterator.remove();
-            }
-        }
-        Playlist filteredPlaylist = new Playlist();
-        filteredPlaylist.playlist = filteredList;
-        return filteredPlaylist;
-    }
-
-
-    @Override
-    public Playlist setScanningOrder(ScanningOrder order) {
-        Playlist filteredPlaylist = new Playlist();
-
-        switch (order) {
-            case ADDING:
-                return this;
-            case NAME:
-                ArrayList<Song> nameSortedList = new ArrayList<>(playlist);
-                Collections.sort(nameSortedList, Comparator.comparing(Song::getName));
-                filteredPlaylist.playlist = nameSortedList;
-                break;
-            case DURATION:
-                ArrayList<Song> durationSortedList = new ArrayList<>(playlist);
-                Collections.sort(durationSortedList, Comparator.comparing(Song::getDuration).reversed());
-                filteredPlaylist.playlist = durationSortedList;
-                break;
-        }
-        return filteredPlaylist;
-    }
-
-
-
     @Override
     public int hashCode() {
-        int result = 1;
-        for (Song song : playlist) {
-            result = 31 * result + song.hashCode();
+        int result = 0;
+        for (Song song : this) {
+            result += song.hashCode();
         }
         return result;
     }
 
+    /**
+     * checks if two playlist are equal by calling the equal method in song
+     * @param other the other playlist
+     * @return true if the both playlists are equals, false otherwise
+     */
     @Override
     public boolean equals(Object other) {
         if (this == other) {
@@ -152,10 +107,9 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         if (other == null || getClass() != other.getClass()) {
             return false;
         }
+        /** if the sizes are different they don't have the same songs */
         Playlist otherPlaylist = (Playlist) other;
-
         if (playlist.size() != otherPlaylist.playlist.size()) {
-            //System.out.println("it's not the same length");
             return false;
         }
 
@@ -170,47 +124,130 @@ public class Playlist implements Cloneable, Iterable<Song> , FilteredSongIterabl
         return i == playlist.size();
     }
 
+    /**
+     * makes a string of the playlist.
+     * @return a string of the playlist
+     */
     @Override
     public String toString() {
-        StringBuilder playlistString = new StringBuilder();
-        Iterator<Song> iterator = playlist.iterator();
-
-        while (iterator.hasNext()) {
-            Song thisSong = iterator.next();
-            playlistString.append("(");
-            playlistString.append(thisSong.toString());
-            playlistString.append(")");
-
-            if (iterator.hasNext()) {
-                playlistString.append(", ");
+        StringBuilder builder = new StringBuilder();
+        int counter = 1;
+        builder.append("[");
+        for (Song song : playlist) {
+            builder.append("(").append(song.toString()).append(")");
+            if (counter != playlist.size()) {
+                builder.append(", ");
             }
+            counter++;
         }
-
-        return "[" + playlistString + "]";
+        builder.append("]");
+        return builder.toString();
     }
 
 
-    private class PlaylistIterator implements Iterator<Song> {
-        private int currentIndex;
-
-        public PlaylistIterator() {
-            currentIndex = 0;
-        }
-
-        @Override
-        public Song next() {
-            if (hasNext()) {
-                Song song = playlist.get(currentIndex);
-                currentIndex++;
-                return song;
+    /**
+     * filters the playlist by the artist name
+     * @param artist the artist name to filter the songs
+     */
+    @Override
+    public void filterArtist(String artist) {
+        if (artist != null) {
+            for (Song song : playlist) {
+                if (!song.getArtist().equals(artist))
+                    filteredSongs.remove(song);
             }
-            return null; // or throw NoSuchElementException
+        }
+    }
+
+    /**
+     * filters the playlist by the song duration
+     * @param duration the duration to filter the songs
+     */
+    @Override
+    public void filterDuration(int duration) {
+        for (Song song : playlist) {
+            if (song.getDuration() > duration) {
+                filteredSongs.remove(song);
+            }
+        }
+    }
+
+    /**
+     * filters the playlist by the song genre
+     * @param genre the genre to filter the songs
+     */
+    @Override
+    public void filterGenre(Song.Genre genre) {
+        if (genre != null) {
+            for (Song song : playlist) {
+                if (song.getGenre() != genre) {
+                    filteredSongs.remove(song);
+                }
+            }
+        }
+    }
+
+    /**
+     * makes the scanning order of the playlist
+     * @param order the scanning order
+     */
+    @Override
+    public void setScanningOrder(ScanningOrder order) {
+        switch (order) {
+            case ADDING:
+                break;
+            case NAME:
+                filteredSongs.sort(Comparator.comparing(Song::getName));
+                break;
+            case DURATION:
+                filteredSongs.sort(Comparator.comparing(Song::getDuration));
+                break;
+        }
+    }
+
+    /**
+     * makes an iterator over the songs in the playlist
+     * @return an iterator over the playlist
+     */
+    public Iterator<Song> iterator() {
+        return new PlaylistIterator<Song>();
+    }
+
+    /**
+     * an inner class for playlist iterator
+     * @param <Song>
+     */
+    class PlaylistIterator<Song> implements Iterator<Song> {
+        /** Represents an iterator for the playlist */
+        private int index;
+
+        /** Constructor */
+        public PlaylistIterator() {
+            this.index = 0;
         }
 
+        /**
+         * checks if there is a next song in the playlist
+         * @return true if there is a next song, false otherwise
+         */
         @Override
         public boolean hasNext() {
-            return currentIndex < playlist.size();
+            if (index >= filteredSongs.size()) {
+                filteredSongs = new ArrayList<>(playlist);
+                return false;
+            }
+            return true;
+        }
+
+        /**
+         * returns the next song in the playlist
+         * @return the next song in the playlist
+         */
+        @Override
+        public Song next() {
+            Song value = (Song) filteredSongs.get(index);
+            index += 1;
+            return value;
         }
     }
-
 }
