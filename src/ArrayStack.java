@@ -3,23 +3,23 @@ import java.lang.reflect.Method;
 import java.util.Iterator;
 
 /**
- * MyStack represents a generic stack implementation using an array.
+ * ArrayStack represents a generic stack implementation using an array.
  *
  * @param <T> the type of elements stored in the stack, which must be Cloneable.
  */
-public class MyStack<T extends Cloneable> implements Stack<T>, Iterable<T> {
+public class ArrayStack<T extends Cloneable> implements Stack<T>, Iterable<T> {
 
     private Cloneable[] storage;    // Array to store the elements of the stack
     private int top;                // Index of the top element in the stack
     private int capacity;           // Maximum capacity of the stack
 
     /**
-     * Constructs a MyStack object with the specified maximum capacity.
+     * Constructs an ArrayStack object with the specified maximum capacity.
      *
      * @param capacity the maximum capacity of the stack
      * @throws StackException if the maximum capacity is negative
      */
-    public MyStack(int capacity) throws StackException {
+    public ArrayStack(int capacity) throws StackException {
         if (capacity >= 0) {
             this.capacity = capacity;
             this.storage = (T[]) new Cloneable[capacity];
@@ -98,15 +98,15 @@ public class MyStack<T extends Cloneable> implements Stack<T>, Iterable<T> {
     }
 
     /**
-     * Creates and returns a deep copy of this MyStack object.
+     * Creates and returns a deep copy of this ArrayStack object.
      *
-     * @return a deep copy of this MyStack object
+     * @return a deep copy of this ArrayStack object
      */
     @Override
-    public MyStack<T> clone() {
-        MyStack<T> copy;
+    public ArrayStack<T> clone() {
+        ArrayStack<T> copy;
         try {
-            copy = (MyStack<T>) super.clone();
+            copy = (ArrayStack<T>) super.clone();
         } catch (CloneNotSupportedException e) {
             return null;
         }
@@ -126,7 +126,7 @@ public class MyStack<T extends Cloneable> implements Stack<T>, Iterable<T> {
     /**
      * Iterator implementation for iterating over the elements in the stack.
      */
-    private class StackIterator implements Iterator<T> {
+    private class ArrayStackIterator implements Iterator<T> {
         private int current = top-1;
 
         /**
@@ -157,6 +157,6 @@ public class MyStack<T extends Cloneable> implements Stack<T>, Iterable<T> {
      */
     @Override
     public Iterator<T> iterator() {
-        return new StackIterator();
+        return new ArrayStackIterator();
     }
 }
