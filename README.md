@@ -1,4 +1,4 @@
-The exercise involves developing a class to represent a playlist.
+HW03: Music Playlist.
 
 The class support the following operations:
 
